@@ -11,7 +11,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
     name: '',
     email: '',
     projectType: 'Full Stack Web App',
-    budget: '$1,000 - $3,000',
+    budget: '₹5,000 – ₹10,000',
     timeline: 'Within 2-4 Weeks',
     details: '',
   });
@@ -20,7 +20,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     soundEffects.playBeep();
 
@@ -28,6 +28,18 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
     const whatsappUrl = `https://wa.me/918668045519?text=${encodeURIComponent(formattedMessage)}`;
 
     window.open(whatsappUrl, '_blank');
+    setSubmitted(true);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    soundEffects.playBeep();
+
+    const subject = `Project Proposal from ${formData.name} (${formData.projectType})`;
+    const body = `Hi Sanjeev,\n\nName: ${formData.name}\nEmail: ${formData.email}\nProject Type: ${formData.projectType}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\nProject Scope & Details:\n${formData.details}`;
+    const mailtoUrl = `mailto:iamheresanjeev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
     setSubmitted(true);
   };
 
@@ -75,7 +87,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-[11px] font-mono text-gray-400 uppercase mb-1">
@@ -133,10 +145,12 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0a] border border-[#3a4a49] text-xs text-white focus:outline-none focus:border-[#ff4d80]"
                 >
-                  <option value="Under $1,000">Under $1,000</option>
-                  <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                  <option value="$3,000 - $5,000">$3,000 - $5,000</option>
-                  <option value="$5,000+">$5,000+</option>
+                  <option value="₹2,500 – ₹5,000">₹2,500 – ₹5,000</option>
+                  <option value="₹5,000 – ₹10,000">₹5,000 – ₹10,000</option>
+                  <option value="₹10,000 – ₹20,000">₹10,000 – ₹20,000</option>
+                  <option value="₹20,000 – ₹35,000">₹20,000 – ₹35,000</option>
+                  <option value="₹35,000 – ₹50,000">₹35,000 – ₹50,000</option>
+                  <option value="₹50,000+">₹50,000+</option>
                 </select>
               </div>
             </div>
@@ -155,13 +169,25 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full btn-gradient py-3.5 rounded-xl text-xs font-headline font-bold text-white tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(0,251,251,0.3)] hover:shadow-[0_0_20px_rgba(0,251,251,0.5)]"
-            >
-              <span>SEND PROPOSAL VIA WHATSAPP</span>
-              <span className="material-symbols-outlined text-sm">chat</span>
-            </button>
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+              <button
+                type="button"
+                onClick={handleWhatsAppSubmit}
+                className="w-full sm:w-1/2 btn-gradient py-3.5 rounded-xl text-xs font-headline font-bold text-white tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(0,251,251,0.3)] hover:shadow-[0_0_20px_rgba(0,251,251,0.5)]"
+              >
+                <span>VIA WHATSAPP</span>
+                <span className="material-symbols-outlined text-sm">chat</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleEmailSubmit}
+                className="w-full sm:w-1/2 py-3.5 rounded-xl bg-[#1a1a2e] border border-[#ff4d80] text-[#ff4d80] hover:bg-[#ff4d80]/10 hover:shadow-[0_0_20px_rgba(255,77,128,0.4)] text-xs font-headline font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer transition-all"
+              >
+                <span>VIA EMAIL</span>
+                <span className="material-symbols-outlined text-sm">mail</span>
+              </button>
+            </div>
           </form>
         )}
 

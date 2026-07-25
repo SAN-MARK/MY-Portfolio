@@ -5,6 +5,9 @@ import { ByTheNumbersSection } from './components/ByTheNumbersSection';
 import { SelectedWorkSection } from './components/SelectedWorkSection';
 import { FeaturedProjectSection } from './components/FeaturedProjectSection';
 import { SkillsSection } from './components/SkillsSection';
+import { CoursesSection } from './components/CoursesSection';
+import { GitHubSection } from './components/GitHubSection';
+import { AchievementsSection } from './components/AchievementsSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ContactSection } from './components/ContactSection';
 import { FooterSection } from './components/FooterSection';
@@ -27,7 +30,7 @@ export default function App() {
 
   // Active section scroll observer
   useEffect(() => {
-    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'experience', 'contact'];
+    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'courses', 'github', 'achievements', 'experience', 'contact'];
     
     const handleScroll = () => {
       const scrollPos = window.scrollY + 200;
@@ -113,7 +116,16 @@ export default function App() {
         {/* 05. Skills & Expertise */}
         <SkillsSection />
 
-        {/* 06. Experience */}
+        {/* 08. Courses & Certifications */}
+        <CoursesSection />
+
+        {/* 06. GitHub Real-Time Metrics & Repos */}
+        <GitHubSection />
+
+        {/* 07. Achievements & Campus Events */}
+        <AchievementsSection />
+
+        {/* 08. Experience */}
         <ExperienceSection />
 
         {/* 07. Contact & Message Dispatch */}

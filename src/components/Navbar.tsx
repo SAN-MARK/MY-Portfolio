@@ -56,8 +56,11 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'work', label: 'WORK', num: '03' },
     { id: 'featured', label: 'FEATURED', num: '04' },
     { id: 'skills', label: 'SKILLS', num: '05' },
-    { id: 'experience', label: 'EXP', num: '06' },
-    { id: 'contact', label: 'CONTACT', num: '07' },
+    { id: 'github', label: 'GITHUB', num: '06' },
+    { id: 'courses', label: 'COURSES', num: '08' },
+    { id: 'achievements', label: 'ACHIEVEMENTS', num: '09' },
+    { id: 'experience', label: 'EXP', num: '07' },
+    { id: 'contact', label: 'CONTACT', num: '10' },
   ];
 
   const scrollToSection = (id: string) => {

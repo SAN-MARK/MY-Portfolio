@@ -47,7 +47,7 @@ export const ByTheNumbersSection: React.FC = () => {
         <div className="text-center mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a1a2e] border border-[#3a4a49] text-xs font-mono text-[#00fbfb]">
             <span className="w-2 h-2 rounded-full bg-[#00fbfb] animate-pulse"></span>
-            <span>REAL AUDIENCE & ENGAGEMENT METRICS</span>
+            <span>VERIFIABLE TECHNICAL METRICS</span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl font-headline font-bold text-white tracking-tight uppercase">

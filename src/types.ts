@@ -9,6 +9,7 @@ export interface ProjectItem {
   actionText: string;
   actionType: 'case_study' | 'repo' | 'docs' | 'reel';
   accentColor: 'pink' | 'cyan' | 'purple' | 'green';
+  linkUrl?: string;
   details?: {
     overview: string;
     keyFeatures: string[];

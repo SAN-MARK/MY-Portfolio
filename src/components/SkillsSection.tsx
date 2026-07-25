@@ -73,23 +73,15 @@ export const SkillsSection: React.FC = () => {
                       </h3>
                     </div>
 
-                    <span className={`font-mono text-sm font-bold ${styles.text}`}>
-                      {cat.strengthPercent}%
+                    <span className={`font-mono text-[10px] uppercase font-bold px-2.5 py-1 rounded-md bg-[#0a0a0a] border ${styles.border} ${styles.text}`}>
+                      {cat.title === 'DEVELOPMENT' ? 'CORE STACK' : cat.title === 'DESIGN' ? 'PRIMARY STACK' : 'MEDIA & CREATIVE'}
                     </span>
                   </div>
 
-                  {/* Progress Meter Bar */}
-                  <div className="w-full h-2 rounded-full bg-[#0a0a0a] border border-[#3a4a49]/60 overflow-hidden mb-8">
-                    <div
-                      className={`h-full ${styles.bgBar} rounded-full transition-all duration-1000`}
-                      style={{ width: `${cat.strengthPercent}%` }}
-                    />
-                  </div>
-
                   {/* Skills Pill List */}
-                  <div className="space-y-2">
+                  <div className="space-y-3 pt-2">
                     <span className="font-mono text-[10px] text-gray-400 uppercase tracking-widest block">
-                      Core Tools & Methodologies:
+                      Tools & Frameworks:
                     </span>
                     <div className="flex flex-wrap gap-2">
                       {cat.skills.map((skill) => (
@@ -99,7 +91,7 @@ export const SkillsSection: React.FC = () => {
                             soundEffects.playBeep();
                             setSelectedSkill(skill);
                           }}
-                          className="px-3 py-1.5 rounded-lg bg-[#0a0a0a] border border-[#3a4a49]/60 text-xs font-mono text-gray-200 hover:text-white hover:border-[#00fbfb] transition-all"
+                          className="px-3 py-1.5 rounded-lg bg-[#0a0a0a] border border-[#3a4a49]/60 text-xs font-mono text-gray-200 hover:text-white hover:border-[#00fbfb] transition-all cursor-pointer"
                         >
                           {skill}
                         </button>

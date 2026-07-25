@@ -2,14 +2,14 @@ import { ProjectItem, StatItem, SkillCategory, ExperienceItem } from '../types';
 
 export const PROFILE_DATA = {
   name: "SANJEEV M",
-  role: "Creative Developer & Growth Strategist",
+  role: "Full Stack Developer | UI/UX Designer",
   subtitle: "Portfolio Hero 01",
-  bio: "Building real projects. Growing authentic audiences. 3,387+ LinkedIn followers. CEO-recognized work across the tech ecosystem.",
+  bio: "Building full-stack web apps and interfaces — from Figma prototype to live deployed product in production.",
   profileImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBcHea4EVeOy5Oi1PeoQ9zE9MubaqW755ib55W0LtHDvpPLCM30sabHjLATKo60OEllwzj0nT36frc_S8BubmsLjpXKSZ1EgKkbS7O93touy3doU7bIjGUg4YMjwgKfYDx_CtkTmkyBSTNfkh6UNenfzHYC0OjasdlWJmHapYi75GY0Qwcv0JxgWS5XOqWeV6p7OcTEp3bhR7qcBjQMhj_eNiWthw1-46ew4Edli81GzQFFzx4osBwGARzQRuzVAozvFvcjLkEyVYC",
   statsSummary: [
-    { label: "3,387 FOLLOWERS" },
-    { label: "CEO ENGAGEMENT" },
-    { label: "7 MONTHS GROWTH" }
+    { label: "3 LIVE PRODUCTION APPS" },
+    { label: "15+ FIGMA SCREENS" },
+    { label: "3 TECH CERTIFICATIONS" }
   ],
   email: "iamheresanjeev@gmail.com",
   phone: "+91 8668045519",
@@ -21,39 +21,39 @@ export const PROFILE_DATA = {
 
 export const STATS_DATA: StatItem[] = [
   {
-    id: "linkedin",
-    title: "LINKEDIN FOLLOWERS",
-    icon: "trending_up",
-    value: "3,387",
-    subValue: "21.8/day",
-    subLabel: "growth rate",
+    id: "live_apps",
+    title: "LIVE DEPLOYED APPS",
+    icon: "rocket_launch",
+    value: "3",
+    subValue: "Production",
+    subLabel: "web builds live",
     accentColor: "pink"
   },
   {
-    id: "recruiter",
-    title: "RECRUITER SEARCHES/WEEK",
-    icon: "person_search",
-    value: "41+",
-    subValue: "Active",
-    subLabel: "hiring radar",
+    id: "certifications",
+    title: "TECHNICAL CERTIFICATIONS",
+    icon: "workspace_premium",
+    value: "3",
+    subValue: "Verified",
+    subLabel: "Full Stack, GenAI, Python",
     accentColor: "cyan"
   },
   {
-    id: "impressions",
-    title: "WEEKLY IMPRESSIONS",
-    icon: "visibility",
-    value: "1,600+",
-    subValue: "Real",
-    subLabel: "engagement metrics",
+    id: "github_repos",
+    title: "GITHUB REPOSITORIES",
+    icon: "code",
+    value: "12+",
+    subValue: "Public",
+    subLabel: "open source & builds",
     accentColor: "purple"
   },
   {
-    id: "ceo",
-    title: "RAPHAEL BUCK ENGAGEMENT",
-    icon: "verified",
-    value: "CEO",
-    subValue: "McKinsey",
-    subLabel: "Leader interaction",
+    id: "figma_screens",
+    title: "FIGMA PROTOTYPE SCREENS",
+    icon: "dashboard",
+    value: "25+",
+    subValue: "Interactive",
+    subLabel: "UI/UX component systems",
     accentColor: "green"
   }
 ];
@@ -133,31 +133,31 @@ export const PROJECTS_DATA: ProjectItem[] = [
       impact: "Live production web application deployed at findback-84.vercel.app with 24-hr SLA.",
       linkUrl: "https://findback-84.vercel.app/"
     }
-  },
-  {
-    id: "video_reel",
-    title: "Video Production Reel",
-    category: "Media Production",
-    badge: "50+ EDITS",
-    badgeType: "edits",
-    description: "Curated collection of high-impact YouTube edits, promotional reels, and commercial motion design.",
-    tags: ["CAPCUT", "PREMIERE", "MOTION"],
-    actionText: "WATCH REEL",
-    actionType: "reel",
-    accentColor: "green",
-    details: {
-      overview: "Over 50+ published video edits driving audience engagement, viral short-form clips, and corporate brand storytelling.",
-      keyFeatures: [
-        "Sound design & custom audio synth transitions",
-        "Kinetic typography & subtitle animation styling",
-        "Color grading optimized for OLED display saturation",
-        "Pacing tailored to high-retention social algorithms"
-      ],
-      techStack: ["Adobe Premiere Pro", "CapCut Pro", "After Effects", "Motion Graphics"],
-      impact: "Generated over 250,000 cumulative organic impressions across social channels."
-    }
   }
 ];
+
+export const CREATIVE_MEDIA_WORK = {
+  id: "video_reel",
+  title: "Video Production Reel",
+  category: "Creative Media Production",
+  badge: "50+ EDITS",
+  badgeType: "edits",
+  description: "Curated collection of high-impact YouTube edits, promotional reels, and commercial motion design created during media internships.",
+  tags: ["CAPCUT", "PREMIERE", "MOTION GRAPHICS"],
+  actionText: "WATCH REEL",
+  accentColor: "purple",
+  details: {
+    overview: "Over 50+ published video edits driving audience engagement, viral short-form clips, and corporate brand storytelling.",
+    keyFeatures: [
+      "Sound design & custom audio synth transitions",
+      "Kinetic typography & subtitle animation styling",
+      "Color grading optimized for high-contrast mobile displays",
+      "Pacing tailored to high-retention engagement"
+    ],
+    techStack: ["Adobe Premiere Pro", "CapCut Pro", "After Effects", "Motion Graphics"],
+    impact: "Generated over 250,000 cumulative organic impressions across social channels."
+  }
+};
 
 export const FEATURED_PROJECT = {
   id: "victor_academy",
@@ -197,28 +197,28 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: "token",
     accentColor: "pink",
     strengthPercent: 98,
-    skills: ["UI/UX", "Figma", "Wireframing", "Prototyping", "Design Systems", "Research"]
+    skills: ["UI/UX", "Figma", "Wireframing", "Prototyping", "Design Systems", "User Research"]
   },
   {
     title: "DEVELOPMENT",
     icon: "terminal",
     accentColor: "cyan",
     strengthPercent: 92,
-    skills: ["HTML5", "CSS3", "JS", "React", "MERN Stack", "GitHub", "Responsive"]
+    skills: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript", "MERN Stack", "GitHub", "Responsive Design"]
   },
   {
-    title: "CREATIVE",
+    title: "CREATIVE & MEDIA",
     icon: "auto_awesome",
     accentColor: "purple",
     strengthPercent: 85,
-    skills: ["Video Editing", "Content Creation", "Social Media", "Community", "Growth Strategy", "Communication"]
+    skills: ["Video Editing", "Content Strategy", "CapCut", "Premiere Pro", "Canva", "Communication"]
   }
 ];
 
 export const TECHNICAL_ECOSYSTEM = {
   title: "Technical Ecosystem",
   description: "My approach merges high-performance engineering with intentional user psychology. Each stack is chosen for scalability and pixel-perfect rendering across the digital spectrum.",
-  pills: ["D3.js", "Three.js", "TailwindCSS", "Node.js"],
+  pills: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Figma", "Vercel"],
   bgImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBI4Sco404R_AHcmPg_MSfQ53R6RqrVfVkcjMB9rHXya9VReDFwZQBkperyLjON0I0i7WB44NFXos6XoqLW_qFEJnXLyguWoUpVszd4ZjVosfb3CKLuFRkCVK0RZBoT3_j1egovNyw1fgwfI8h_yDGscm5Y2qIJnxDNARWJhMNyphYNQnobLCCYDwTLD7HnVPkIz-HWLmWtnlzfSgFVJ7zGgoQiDq7VUPOGiqpPvrBPuXA92K0FkGWjMUWymh_5unvqs1XzeX_W2GAD"
 };
 
@@ -244,40 +244,35 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: "freelance",
     company: "Freelance Designer",
-    role: "Independent Creative",
+    role: "Independent UI/UX & Web Developer",
     period: "Jun 2026 - Present",
     statusText: "✓ ACTIVE",
     statusType: "active",
     icon: "palette",
     accentColor: "pink",
     colSpan: "md:col-span-5",
-    summary: "Operating as an independent creative, delivering high-impact visual solutions for digital-first brands.",
+    summary: "Operating as an independent designer and web developer, delivering custom digital products and design systems.",
     points: [
-      "Successfully acquired high-ticket clients through strategic **LinkedIn outreach** and networking.",
-      "Leading a complete **Portfolio Redesign** for a tech startup, focusing on minimalist neon aesthetics."
+      "Designing responsive web application layouts and interactive Figma prototypes.",
+      "Building performant client-facing websites using modern HTML/CSS, React, and Tailwind CSS."
     ],
-    link: "linkedin.com/in/neonprofessional"
+    link: "linkedin.com/in/sanjeeveditor2008"
   },
   {
     id: "marpu",
     company: "Marpu Foundation",
-    role: "Marketing Intern",
+    role: "Marketing & Video Editing Intern",
     period: "Dec 2025 - Jan 2026",
     statusText: "✓ COMPLETED",
     statusType: "completed",
     icon: "campaign",
     accentColor: "purple",
     colSpan: "md:col-span-12",
-    summary: "Driven marketing campaign execution and brand growth for non-profit social initiatives.",
+    summary: "Driven content strategy execution, poster design, and video editing for social initiatives.",
     points: [
-      "End-to-end **Social Media Management** across platforms.",
-      "Content strategy and visual asset creation."
-    ],
-    achievement: {
-      value: "35%",
-      label: "INCREASE IN GLOBAL ENGAGEMENT METRICS",
-      description: "Optimized post frequency and visual language to drive organic growth and community participation."
-    }
+      "Created high-engagement video edits and graphic assets across social channels.",
+      "Supported community reach through visual storytelling and campaign design."
+    ]
   }
 ];
 
@@ -286,3 +281,4 @@ export const SOCIAL_ICONS = {
   github: "https://lh3.googleusercontent.com/aida-public/AB6AXuAL6gAiOITlEQau6RMS1qeig9ttXp-Gnl3JWsWewB739y4rXnAc5bZcIXcZ3lFSPdvT-fi5cA61JALRnsQBuo2yVdBdqo_mAxIml7AvuC4LpCv7IZLCS8nbVpDczILIjJdi1MH2154KD3EW2WXu1ZoAYt2UjNlkA405nK5rCl0IvW5Q9JhKNmSVhK_CiIQ1fTFaW5qEdphamMDA_OMJTK9dCLLEU1mNroG4y6xt-gbNVj055i9WOkGWuaLiTEAT8-A6YMtengoDj-vj",
   figma: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrHYtkqAgqGfI3pgble07U8xl6wRPSf9RsrLpoJjMpO_x646WjeFWlmIsiThDmMNVRRyxI5L6XRKaolFjFF-1N0uHdgiEFMe69Y6q79vZDUMy5laIPQ3jatKaEdvXXpZul96WmO3n0eIEQtlplXsRddQdtMYuEYAOCDabF-5LxjxVrDi3yPS_pSAu1bXvtzYFNjfS5_wBlv4j46HGWvp2koYeBOKyiLxCcZPjRzupu0sG7mfXRl91wMyu-6eXxGC42BULUPOEyjtU0"
 };
+

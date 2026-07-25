@@ -42,13 +42,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 />
               </div>
 
-              {/* Floating Growth Badge */}
+              {/* Floating Status Badge */}
               <div className="absolute -bottom-3 right-2 sm:right-6 bg-[#1a1a2e]/90 border border-[#00fbfb] rounded-full px-4 py-1.5 backdrop-blur-md shadow-[0_0_15px_rgba(0,251,251,0.4)] flex items-center gap-2 animate-float">
                 <span className="material-symbols-outlined text-[#00fbfb] text-base">
-                  trending_up
+                  terminal
                 </span>
                 <span className="font-mono text-xs text-[#00fbfb] font-bold">
-                  +21.8 / day growth
+                  3 LIVE APPS DEPLOYED
                 </span>
               </div>
 
@@ -83,11 +83,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Bio Paragraph */}
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed font-sans">
-              Building real projects. Growing authentic audiences.{' '}
+              Building full-stack web apps and interfaces — from{' '}
               <strong className="text-white font-semibold underline decoration-[#ff4d80] decoration-2 underline-offset-4">
-                3,387+ LinkedIn followers.
+                Figma prototype
               </strong>{' '}
-              CEO-recognized work across the tech ecosystem.
+              to live deployed product in production.
             </p>
 
             {/* Stats Summary Bar */}
