@@ -6,54 +6,27 @@ import { soundEffects } from '../utils/audio';
 export const ByTheNumbersSection: React.FC = () => {
   const [selectedStat, setSelectedStat] = useState<StatItem | null>(null);
 
-  const getBorderGlowClass = (accent: StatItem['accentColor']) => {
-    switch (accent) {
-      case 'pink':
-        return 'hover:border-[#ff4d80] hover:shadow-[0_0_20px_rgba(255,77,128,0.4)]';
-      case 'cyan':
-        return 'hover:border-[#00fbfb] hover:shadow-[0_0_20px_rgba(0,251,251,0.4)]';
-      case 'purple':
-        return 'hover:border-[#abc7ff] hover:shadow-[0_0_20px_rgba(171,199,255,0.4)]';
-      case 'green':
-        return 'hover:border-[#00dddd] hover:shadow-[0_0_20px_rgba(0,221,221,0.4)]';
-      default:
-        return 'hover:border-[#00fbfb]';
-    }
-  };
-
-  const getAccentTextColor = (accent: StatItem['accentColor']) => {
-    switch (accent) {
-      case 'pink':
-        return 'text-[#ff4d80]';
-      case 'cyan':
-        return 'text-[#00fbfb]';
-      case 'purple':
-        return 'text-[#abc7ff]';
-      case 'green':
-        return 'text-[#00dddd]';
-      default:
-        return 'text-white';
-    }
-  };
-
   return (
-    <section id="numbers" className="py-20 relative bg-[#0a0a0a]">
-      {/* Decorative Gradient Line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#ff4d80]/40 to-transparent" />
+    <section id="numbers" className="py-20 relative bg-[#0d0d0d]">
+      {/* Halftone Overlay Background */}
+      <div className="absolute inset-0 bg-halftone-dots opacity-20 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Decorative Red Line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a1a2e] border border-[#3a4a49] text-xs font-mono text-[#00fbfb]">
-            <span className="w-2 h-2 rounded-full bg-[#00fbfb] animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#161616] border-2 border-[#000000] text-xs font-mono text-[#E31E24] font-bold shadow-[2px_2px_0px_#000000]">
+            <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse"></span>
             <span>VERIFIABLE TECHNICAL METRICS</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl font-headline font-bold text-white tracking-tight uppercase">
-            BY THE <span className="neon-pink-text">NUMBERS</span>
+          <h2 className="text-4xl sm:text-6xl font-display font-black text-[#F5F5F0] tracking-wider uppercase">
+            BY THE <span className="text-[#E31E24]">NUMBERS</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#ff4d80] to-[#00fbfb] mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-[#E31E24] mx-auto rounded-full" />
         </div>
 
         {/* 4 Stats Cards Grid */}
@@ -66,45 +39,35 @@ export const ByTheNumbersSection: React.FC = () => {
                 soundEffects.playClick();
                 setSelectedStat(stat);
               }}
-              className={`glass-card p-6 rounded-2xl border border-[#3a4a49]/60 flex flex-col justify-between cursor-pointer transition-all duration-300 transform hover:-translate-y-1 group ${getBorderGlowClass(
-                stat.accentColor
-              )}`}
+              className="bg-[#161616] p-6 rounded-2xl border-3 border-[#000000] shadow-[5px_5px_0px_#000000] flex flex-col justify-between cursor-pointer transition-all duration-250 hover:-translate-y-1 hover:border-[#E31E24] hover:shadow-[6px_6px_0px_#E31E24] group"
             >
               {/* Top Row: Icon & Label */}
               <div className="flex items-center justify-between mb-4">
-                <span
-                  className={`material-symbols-outlined text-2xl p-2.5 rounded-xl bg-[#0a0a0a] border border-[#3a4a49]/60 ${getAccentTextColor(
-                    stat.accentColor
-                  )}`}
-                >
+                <span className="material-symbols-outlined text-2xl p-2.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] text-[#E31E24]">
                   {stat.icon}
                 </span>
 
-                <span className="font-mono text-[10px] text-gray-400 uppercase tracking-widest bg-[#0a0a0a] px-2.5 py-1 rounded-md border border-[#3a4a49]/40">
+                <span className="font-mono text-[10px] text-[#F5F5F0] font-bold uppercase tracking-widest bg-[#0d0d0d] px-2.5 py-1 rounded-md border-2 border-[#000000]">
                   VERIFIED
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="font-mono text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">
+              <h3 className="font-headline font-bold text-xs text-[#B8B8B0] uppercase tracking-wider mb-2">
                 {stat.title}
               </h3>
 
               {/* Main Stat Value */}
               <div className="mb-4">
-                <span
-                  className={`font-headline font-black text-4xl sm:text-5xl tracking-tight block ${getAccentTextColor(
-                    stat.accentColor
-                  )}`}
-                >
+                <span className="font-display font-black text-5xl sm:text-6xl tracking-tight block text-[#F5F5F0] group-hover:text-[#E31E24] transition-colors">
                   {stat.value}
                 </span>
               </div>
 
               {/* Bottom Sub-label */}
-              <div className="pt-3 border-t border-[#3a4a49]/40 flex items-center justify-between text-xs font-mono">
-                <span className="font-semibold text-white">{stat.subValue}</span>
-                <span className="text-gray-400">{stat.subLabel}</span>
+              <div className="pt-3 border-t-2 border-[#000000] flex items-center justify-between text-xs font-mono">
+                <span className="font-bold text-[#F5F5F0]">{stat.subValue}</span>
+                <span className="text-[#B8B8B0]">{stat.subLabel}</span>
               </div>
             </div>
           ))}
@@ -114,47 +77,47 @@ export const ByTheNumbersSection: React.FC = () => {
 
       {/* Stat Detail Modal */}
       {selectedStat && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-          <div className="glass-card max-w-md w-full p-6 rounded-2xl border border-[#ff4d80] relative space-y-6 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+          <div className="bg-[#161616] max-w-md w-full p-6 rounded-2xl border-4 border-[#000000] shadow-[8px_8px_0px_#E31E24] relative space-y-6">
             <button
               onClick={() => setSelectedStat(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-lg bg-[#0a0a0a] border border-[#3a4a49] text-gray-400 hover:text-white"
+              className="absolute top-4 right-4 p-1.5 rounded-lg bg-[#0d0d0d] border-2 border-[#000000] text-[#B8B8B0] hover:text-[#F5F5F0] cursor-pointer"
             >
               <span className="material-symbols-outlined text-lg">close</span>
             </button>
 
             <div className="flex items-center gap-3">
-              <span className={`material-symbols-outlined text-3xl ${getAccentTextColor(selectedStat.accentColor)}`}>
+              <span className="material-symbols-outlined text-3xl text-[#E31E24]">
                 {selectedStat.icon}
               </span>
               <div>
-                <h3 className="font-headline font-bold text-lg text-white uppercase">
+                <h3 className="font-headline font-bold text-xl text-[#F5F5F0] uppercase">
                   {selectedStat.title}
                 </h3>
-                <p className="font-mono text-xs text-gray-400">Verified Growth Audit</p>
+                <p className="font-mono text-xs text-[#E31E24] font-bold">Verified Growth Audit</p>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#0a0a0a] border border-[#3a4a49]/60 space-y-3">
+            <div className="p-4 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] space-y-3">
               <div className="flex items-baseline justify-between">
-                <span className="text-gray-400 text-xs font-mono">Current Total</span>
-                <span className={`font-headline font-bold text-3xl ${getAccentTextColor(selectedStat.accentColor)}`}>
+                <span className="text-[#B8B8B0] text-xs font-mono">Current Total</span>
+                <span className="font-display font-black text-4xl text-[#E31E24]">
                   {selectedStat.value}
                 </span>
               </div>
-              <div className="flex items-baseline justify-between pt-2 border-t border-[#3a4a49]/40 text-xs font-mono">
-                <span className="text-gray-400">Daily Trajectory</span>
-                <span className="text-white font-semibold">{selectedStat.subValue} ({selectedStat.subLabel})</span>
+              <div className="flex items-baseline justify-between pt-2 border-t-2 border-[#000000] text-xs font-mono">
+                <span className="text-[#B8B8B0]">Daily Trajectory</span>
+                <span className="text-[#F5F5F0] font-bold">{selectedStat.subValue} ({selectedStat.subLabel})</span>
               </div>
             </div>
 
-            <p className="text-xs text-gray-300 font-sans leading-relaxed">
-              This metric reflects authentic, organic audience growth across professional networks and tech leadership circles over the past 7 months.
+            <p className="text-xs text-[#B8B8B0] font-sans leading-relaxed">
+              This metric reflects authentic, organic performance and activity across engineering projects, repositories, and UI systems.
             </p>
 
             <button
               onClick={() => setSelectedStat(null)}
-              className="w-full py-2.5 rounded-xl bg-[#1a1a2e] border border-[#3a4a49] hover:border-[#ff4d80] text-xs font-headline font-bold text-white uppercase tracking-wider"
+              className="w-full py-2.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] hover:border-[#E31E24] text-xs font-headline font-bold text-[#F5F5F0] uppercase tracking-wider cursor-pointer shadow-[3px_3px_0px_#000000]"
             >
               CLOSE AUDIT
             </button>
