@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-headline: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: #e1e3e4;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-headline {
+    font-family: var(--font-headline);
+  }
+
+  code, pre, .font-mono, .label-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Neon Text & Glows */
+.neon-pink-text {
+  color: #ff4d80;
+  text-shadow: 0 0 10px rgba(255, 77, 128, 0.6), 0 0 20px rgba(255, 77, 128, 0.4);
+}
+
+.neon-cyan-text {
+  color: #00fbfb;
+  text-shadow: 0 0 8px rgba(0, 251, 251, 0.6), 0 0 16px rgba(0, 251, 251, 0.3);
+}
+
+.neon-purple-text {
+  color: #abc7ff;
+  text-shadow: 0 0 8px rgba(171, 199, 255, 0.6);
+}
+
+.neon-green-text {
+  color: #00dddd;
+  text-shadow: 0 0 8px rgba(0, 221, 221, 0.6);
+}
+
+/* Neon Borders & Micro Glows */
+.neon-pink-border {
+  border: 1px solid #ff4d80;
+  box-shadow: 0 0 12px rgba(255, 77, 128, 0.4), inset 0 0 6px rgba(255, 77, 128, 0.2);
+}
+
+.neon-cyan-border {
+  border: 1px solid #00fbfb;
+  box-shadow: 0 0 12px rgba(0, 251, 251, 0.4), inset 0 0 6px rgba(0, 251, 251, 0.2);
+}
+
+.neon-purple-border {
+  border: 1px solid #abc7ff;
+  box-shadow: 0 0 12px rgba(171, 199, 255, 0.4), inset 0 0 6px rgba(171, 199, 255, 0.2);
+}
+
+.neon-green-border {
+  border: 1px solid #00dddd;
+  box-shadow: 0 0 12px rgba(0, 221, 221, 0.4), inset 0 0 6px rgba(0, 221, 221, 0.2);
+}
+
+.micro-glow-pink:hover {
+  border-color: #ff4d80;
+  box-shadow: 0 0 15px rgba(255, 77, 128, 0.5);
+}
+
+.micro-glow-cyan:hover {
+  border-color: #00fbfb;
+  box-shadow: 0 0 15px rgba(0, 251, 251, 0.5);
+}
+
+.micro-glow-purple:hover {
+  border-color: #abc7ff;
+  box-shadow: 0 0 15px rgba(171, 199, 255, 0.5);
+}
+
+.micro-glow-green:hover {
+  border-color: #00dddd;
+  box-shadow: 0 0 15px rgba(0, 221, 221, 0.5);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(58, 74, 73, 0.4);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #ff4d80 0%, #7c3aed 100%);
+  box-shadow: 0 0 15px rgba(255, 77, 128, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 0 25px rgba(255, 77, 128, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Atmospheric Grid Background */
+.bg-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.stat-divider {
+  width: 4px;
+  height: 4px;
+  background-color: #ff4d80;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 12px;
+  vertical-align: middle;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1d2021;
+  border-radius: 4px;
+  border: 1px solid #3a4a49;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00fbfb;
+}
+
+/* Scanline Effect */
+.scanlines-overlay {
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+  background-size: 100% 4px, 3px 100%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
