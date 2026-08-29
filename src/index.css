@@ -2,13 +2,13 @@
 
 @layer base {
   :root {
-    --bg-primary: #0d0d0d;
-    --bg-card: #161616;
-    --red-primary: #E31E24;
-    --red-dark: #A6151A;
-    --white: #F5F5F0;
-    --white-dim: #B8B8B0;
-    --ink-black: #000000;
+    --bg-primary: #0a0a0f;
+    --bg-card: #12121a;
+    --accent-primary: #6366f1;
+    --accent-dark: #4f46e5;
+    --white: #e5e5ea;
+    --white-dim: #94949e;
+    --ink-black: #050508;
 
     --font-display: 'Bebas Neue', 'Anton', sans-serif;
     --font-headline: 'Oswald', 'Space Grotesk', sans-serif;
@@ -38,42 +38,42 @@
   }
 }
 
-/* Crimson Web Utility Text & Badges */
-.crimson-text {
-  color: #E31E24;
+/* Accent Utility Text & Badges */
+.crimson-text, .accent-text {
+  color: #6366f1;
 }
 
-.crimson-glow-text {
-  color: #E31E24;
-  text-shadow: 0 0 10px rgba(227, 30, 36, 0.6), 0 0 20px rgba(227, 30, 36, 0.3);
+.crimson-glow-text, .accent-glow-text {
+  color: #6366f1;
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.6), 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
-.crimson-badge {
-  background-color: rgba(227, 30, 36, 0.15);
-  border: 1px solid #E31E24;
-  color: #E31E24;
+.crimson-badge, .accent-badge {
+  background-color: rgba(99, 102, 241, 0.15);
+  border: 1px solid #6366f1;
+  color: #6366f1;
 }
 
-/* Comic Ink Cards */
+/* Card Styling */
 .comic-card, .glass-card {
-  background: #161616;
-  border: 3px solid #000000;
-  box-shadow: 4px 4px 0px #000000;
+  background: #12121a;
+  border: 3px solid #050508;
+  box-shadow: 4px 4px 0px #050508;
   transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .comic-card:hover, .glass-card:hover {
-  border-color: #E31E24;
-  box-shadow: 6px 6px 0px #E31E24;
+  border-color: #6366f1;
+  box-shadow: 6px 6px 0px #6366f1;
   transform: translateY(-3px);
 }
 
-/* Crimson Primary Button */
-.btn-gradient, .btn-crimson {
-  background: #E31E24;
-  color: #F5F5F0;
-  border: 2px solid #000000;
-  box-shadow: 4px 4px 0px #000000;
+/* Accent Primary Button */
+.btn-gradient, .btn-crimson, .btn-accent {
+  background: #6366f1;
+  color: #e5e5ea;
+  border: 2px solid #050508;
+  box-shadow: 4px 4px 0px #050508;
   font-family: var(--font-headline);
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -83,14 +83,14 @@
   overflow: hidden;
 }
 
-.btn-gradient:hover, .btn-crimson:hover {
-  background: #A6151A;
-  box-shadow: 6px 6px 0px #E31E24;
+.btn-gradient:hover, .btn-crimson:hover, .btn-accent:hover {
+  background: #4f46e5;
+  box-shadow: 6px 6px 0px #6366f1;
   transform: translateY(-2px);
 }
 
-.btn-gradient:active, .btn-crimson:active {
-  box-shadow: 2px 2px 0px #000000;
+.btn-gradient:active, .btn-crimson:active, .btn-accent:active {
+  box-shadow: 2px 2px 0px #050508;
   transform: translateY(2px);
 }
 
@@ -103,7 +103,7 @@
 .impact-burst-bg {
   position: absolute;
   inset: -6px;
-  background: #E31E24;
+  background: #6366f1;
   clip-path: polygon(
     0% 15%, 12% 0%, 88% 5%, 100% 20%, 
     95% 85%, 85% 100%, 15% 95%, 0% 80%
@@ -118,36 +118,36 @@
   opacity: 1;
 }
 
-/* Web Pattern Background - Thin White Thread Radial Pattern */
+/* Thread / Grid Backgrounds */
 .bg-web-threads {
   background-image: 
-    radial-gradient(circle at 80% 20%, rgba(227, 30, 36, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 20% 80%, rgba(227, 30, 36, 0.1) 0%, transparent 35%),
-    repeating-radial-gradient(circle at 50% 50%, rgba(245, 245, 240, 0.03) 0, rgba(245, 245, 240, 0.03) 1px, transparent 1px, transparent 30px);
+    radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 35%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(229, 229, 234, 0.03) 0, rgba(229, 229, 234, 0.03) 1px, transparent 1px, transparent 30px);
 }
 
-/* Comic Halftone Dot Shading */
+/* Halftone Dot Shading */
 .bg-halftone-dots {
-  background-image: radial-gradient(rgba(227, 30, 36, 0.22) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(99, 102, 241, 0.22) 1.5px, transparent 1.5px);
   background-size: 14px 14px;
 }
 
 .bg-halftone-black {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.35) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(5, 5, 8, 0.35) 1.5px, transparent 1.5px);
   background-size: 12px 12px;
 }
 
 /* Atmospheric Grid */
 .bg-grid {
-  background-image: linear-gradient(rgba(245, 245, 240, 0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(245, 245, 240, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(229, 229, 234, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(229, 229, 234, 0.03) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .stat-divider {
   width: 6px;
   height: 6px;
-  background-color: #E31E24;
+  background-color: #6366f1;
   display: inline-block;
   margin: 0 12px;
   vertical-align: middle;
@@ -160,17 +160,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: #0a0a0f;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222222;
+  background: #1e1e2d;
   border-radius: 0px;
-  border: 2px solid #000000;
+  border: 2px solid #050508;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E31E24;
+  background: #6366f1;
 }
 
 @keyframes float {

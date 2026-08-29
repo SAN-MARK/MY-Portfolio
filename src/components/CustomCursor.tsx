@@ -41,8 +41,8 @@ export const CustomCursor: React.FC = () => {
         <div
           className={`w-6 h-6 rounded-full border transition-all duration-150 ${
             isPointer
-              ? 'border-[#ff4d80] bg-[#ff4d80]/20 shadow-[0_0_15px_#ff4d80]'
-              : 'border-[#00fbfb] bg-transparent shadow-[0_0_10px_#00fbfb]'
+              ? 'border-[#6366f1] bg-[#6366f1]/20 shadow-[0_0_15px_#6366f1]'
+              : 'border-[#818cf8] bg-transparent shadow-[0_0_10px_rgba(99,102,241,0.5)]'
           }`}
         />
       </div>

@@ -77,39 +77,39 @@ export const Navbar: React.FC<NavbarProps> = ({
       id="main_nav_header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0d0d0d]/95 backdrop-blur-md border-b-2 border-[#000000] py-3 shadow-[0_4px_12px_rgba(0,0,0,0.8)]'
+          ? 'bg-[#0a0a0f]/95 backdrop-blur-md border-b-2 border-[#050508] py-3 shadow-[0_4px_12px_rgba(0,0,0,0.8)]'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo - Crimson Web Comic Panel */}
+        {/* Brand Logo */}
         <button
           id="nav_brand_logo_btn"
           onClick={() => scrollToSection('hero')}
           className="flex items-center gap-3 group text-left focus:outline-none cursor-pointer"
         >
           <div className="relative">
-            <div className="w-9 h-9 rounded-lg bg-[#E31E24] border-2 border-[#000000] shadow-[2px_2px_0px_#000000] flex items-center justify-center font-display font-black text-lg text-[#F5F5F0]">
+            <div className="w-9 h-9 rounded-lg bg-[#6366f1] border-2 border-[#050508] shadow-[2px_2px_0px_#050508] flex items-center justify-center font-display font-black text-lg text-[#e5e5ea]">
               S
             </div>
             <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E31E24] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E31E24]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6366f1] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#6366f1]"></span>
             </span>
           </div>
 
           <div className="flex flex-col">
-            <span className="font-display font-bold text-xl tracking-wider text-[#F5F5F0] group-hover:text-[#E31E24] transition-colors">
+            <span className="font-display font-bold text-xl tracking-wider text-[#e5e5ea] group-hover:text-[#6366f1] transition-colors">
               SANJEEV M
             </span>
-            <span className="font-mono text-[10px] text-[#E31E24] font-bold tracking-widest uppercase">
+            <span className="font-mono text-[10px] text-[#6366f1] font-bold tracking-widest uppercase">
               CREATIVE DEVELOPER
             </span>
           </div>
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 bg-[#161616] border-2 border-[#000000] rounded-full px-4 py-1.5 shadow-[3px_3px_0px_#000000]">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 bg-[#12121a] border-2 border-[#050508] rounded-full px-4 py-1.5 shadow-[3px_3px_0px_#050508]">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -119,8 +119,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => scrollToSection(link.id)}
                 className={`px-3 py-1 rounded-full text-xs font-mono transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
                   isActive
-                    ? 'bg-[#E31E24] text-[#F5F5F0] font-bold border border-[#000000] shadow-[2px_2px_0px_#000000]'
-                    : 'text-[#B8B8B0] hover:text-[#F5F5F0] hover:bg-[#E31E24]/10'
+                    ? 'bg-[#6366f1] text-[#e5e5ea] font-bold border border-[#050508] shadow-[2px_2px_0px_#050508]'
+                    : 'text-[#94949e] hover:text-[#e5e5ea] hover:bg-[#6366f1]/10'
                 }`}
               >
                 <span className="text-[9px] opacity-70">{link.num}.</span>
@@ -139,10 +139,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               soundEffects.playBeep();
               onOpenAiModal();
             }}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#161616] border-2 border-[#000000] shadow-[2px_2px_0px_#000000] text-[#F5F5F0] hover:border-[#E31E24] hover:text-[#E31E24] text-xs font-mono transition-all duration-200 cursor-pointer"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#12121a] border-2 border-[#050508] shadow-[2px_2px_0px_#050508] text-[#e5e5ea] hover:border-[#6366f1] hover:text-[#6366f1] text-xs font-mono transition-all duration-200 cursor-pointer"
             title="Ask Sanjeev's AI Twin"
           >
-            <span className="material-symbols-outlined text-sm animate-pulse text-[#E31E24]">
+            <span className="material-symbols-outlined text-sm animate-pulse text-[#6366f1]">
               smart_toy
             </span>
             <span className="tracking-wide font-bold">AI TWIN</span>
@@ -155,10 +155,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               soundEffects.playClick();
               onToggleScanlines();
             }}
-            className={`p-1.5 rounded-lg border-2 border-[#000000] text-xs font-mono transition-all cursor-pointer ${
+            className={`p-1.5 rounded-lg border-2 border-[#050508] text-xs font-mono transition-all cursor-pointer ${
               scanlinesEnabled
-                ? 'bg-[#E31E24] text-[#F5F5F0] shadow-[2px_2px_0px_#000000]'
-                : 'bg-[#161616] text-[#B8B8B0] hover:text-[#F5F5F0]'
+                ? 'bg-[#6366f1] text-[#e5e5ea] shadow-[2px_2px_0px_#050508]'
+                : 'bg-[#12121a] text-[#94949e] hover:text-[#e5e5ea]'
             }`}
             title={scanlinesEnabled ? 'Scanlines Enabled' : 'Scanlines Disabled'}
           >
@@ -173,10 +173,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => {
               onToggleSound();
             }}
-            className={`p-1.5 rounded-lg border-2 border-[#000000] text-xs font-mono transition-all cursor-pointer ${
+            className={`p-1.5 rounded-lg border-2 border-[#050508] text-xs font-mono transition-all cursor-pointer ${
               soundEnabled
-                ? 'bg-[#E31E24] text-[#F5F5F0] shadow-[2px_2px_0px_#000000]'
-                : 'bg-[#161616] text-[#B8B8B0] hover:text-[#F5F5F0]'
+                ? 'bg-[#6366f1] text-[#e5e5ea] shadow-[2px_2px_0px_#050508]'
+                : 'bg-[#12121a] text-[#94949e] hover:text-[#e5e5ea]'
             }`}
             title={soundEnabled ? 'Audio Effects On' : 'Audio Muted'}
           >
@@ -190,15 +190,15 @@ export const Navbar: React.FC<NavbarProps> = ({
             id="nav_download_resume_btn"
             onClick={handleDownloadResume}
             disabled={isDownloadingResume}
-            className="relative px-3.5 py-1.5 rounded-lg bg-[#161616] border-2 border-[#000000] shadow-[2px_2px_0px_#E31E24] text-[#F5F5F0] hover:bg-[#E31E24]/10 text-xs font-mono transition-all duration-200 flex items-center gap-2 overflow-hidden cursor-pointer"
+            className="relative px-3.5 py-1.5 rounded-lg bg-[#12121a] border-2 border-[#050508] shadow-[2px_2px_0px_#6366f1] text-[#e5e5ea] hover:bg-[#6366f1]/10 text-xs font-mono transition-all duration-200 flex items-center gap-2 overflow-hidden cursor-pointer"
             title="Download Sanjeev M's Resume (PDF/TXT)"
           >
             <span className="relative flex h-2 w-2">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E31E24] opacity-75`}></span>
-              <span className={`relative inline-flex rounded-full h-2 w-2 bg-[#E31E24]`}></span>
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6366f1] opacity-75`}></span>
+              <span className={`relative inline-flex rounded-full h-2 w-2 bg-[#6366f1]`}></span>
             </span>
 
-            <span className="material-symbols-outlined text-sm text-[#E31E24]">
+            <span className="material-symbols-outlined text-sm text-[#6366f1]">
               {isDownloadingResume ? 'downloading' : 'description'}
             </span>
 
@@ -208,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {isDownloadingResume && (
               <div
-                className="absolute bottom-0 left-0 h-[3px] bg-[#E31E24] transition-all duration-150"
+                className="absolute bottom-0 left-0 h-[3px] bg-[#6366f1] transition-all duration-150"
                 style={{ width: `${downloadProgress}%` }}
               />
             )}
@@ -221,7 +221,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               soundEffects.playClick();
               onOpenHireModal();
             }}
-            className="btn-crimson px-4 py-2 rounded-lg text-xs font-headline font-bold text-[#F5F5F0] tracking-wider uppercase flex items-center gap-2 cursor-pointer"
+            className="btn-crimson px-4 py-2 rounded-lg text-xs font-headline font-bold text-[#e5e5ea] tracking-wider uppercase flex items-center gap-2 cursor-pointer"
           >
             <span>HIRE ME</span>
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -233,7 +233,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="mobile_ai_btn"
             onClick={onOpenAiModal}
-            className="p-2 rounded-lg bg-[#161616] border-2 border-[#000000] text-[#E31E24]"
+            className="p-2 rounded-lg bg-[#12121a] border-2 border-[#050508] text-[#6366f1]"
           >
             <span className="material-symbols-outlined text-sm">smart_toy</span>
           </button>
@@ -244,7 +244,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               soundEffects.playClick();
               setMobileMenuOpen(!mobileMenuOpen);
             }}
-            className="p-2 rounded-lg bg-[#161616] border-2 border-[#000000] text-[#F5F5F0] focus:outline-none"
+            className="p-2 rounded-lg bg-[#12121a] border-2 border-[#050508] text-[#e5e5ea] focus:outline-none"
           >
             <span className="material-symbols-outlined text-xl block">
               {mobileMenuOpen ? 'close' : 'menu'}
@@ -255,7 +255,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0d0d0d]/98 border-b-4 border-[#000000] px-4 py-6 mt-3 space-y-4 shadow-2xl animate-fadeIn">
+        <div className="md:hidden bg-[#0a0a0f]/98 border-b-4 border-[#050508] px-4 py-6 mt-3 space-y-4 shadow-2xl animate-fadeIn">
           <div className="grid grid-cols-2 gap-2">
             {navLinks.map((link) => (
               <button
@@ -264,8 +264,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => scrollToSection(link.id)}
                 className={`p-3 rounded-lg text-left text-xs font-mono border-2 flex items-center justify-between ${
                   activeSection === link.id
-                    ? 'bg-[#E31E24] border-[#000000] text-[#F5F5F0] font-bold shadow-[2px_2px_0px_#000000]'
-                    : 'bg-[#161616] border-[#000000] text-[#B8B8B0]'
+                    ? 'bg-[#6366f1] border-[#050508] text-[#e5e5ea] font-bold shadow-[2px_2px_0px_#050508]'
+                    : 'bg-[#12121a] border-[#050508] text-[#94949e]'
                 }`}
               >
                 <span>{link.label}</span>
@@ -274,20 +274,20 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </div>
 
-          <div className="pt-2 border-t-2 border-[#000000] flex flex-col gap-2">
+          <div className="pt-2 border-t-2 border-[#050508] flex flex-col gap-2">
             <button
               id="mobile_download_resume_btn"
               onClick={() => {
                 setMobileMenuOpen(false);
                 handleDownloadResume();
               }}
-              className="w-full py-2.5 rounded-lg bg-[#161616] border-2 border-[#000000] shadow-[2px_2px_0px_#E31E24] text-xs font-mono text-[#F5F5F0] flex items-center justify-center gap-2"
+              className="w-full py-2.5 rounded-lg bg-[#12121a] border-2 border-[#050508] shadow-[2px_2px_0px_#6366f1] text-xs font-mono text-[#e5e5ea] flex items-center justify-center gap-2"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E31E24] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E31E24]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6366f1] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#6366f1]"></span>
               </span>
-              <span className="material-symbols-outlined text-sm text-[#E31E24]">description</span>
+              <span className="material-symbols-outlined text-sm text-[#6366f1]">description</span>
               <span className="font-bold tracking-wider">DOWNLOAD RESUME</span>
             </button>
 
@@ -295,7 +295,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 id="mobile_scanline_toggle"
                 onClick={onToggleScanlines}
-                className="flex-1 py-2 rounded-lg bg-[#161616] border-2 border-[#000000] text-xs font-mono text-[#B8B8B0] flex items-center justify-center gap-2"
+                className="flex-1 py-2 rounded-lg bg-[#12121a] border-2 border-[#050508] text-xs font-mono text-[#94949e] flex items-center justify-center gap-2"
               >
                 <span className="material-symbols-outlined text-sm">
                   {scanlinesEnabled ? 'grid_on' : 'grid_off'}
@@ -309,7 +309,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setMobileMenuOpen(false);
                   onOpenHireModal();
                 }}
-                className="flex-1 btn-crimson py-2 rounded-lg text-xs font-headline font-bold text-[#F5F5F0] text-center"
+                className="flex-1 btn-crimson py-2 rounded-lg text-xs font-headline font-bold text-[#e5e5ea] text-center"
               >
                 HIRE ME →
               </button>

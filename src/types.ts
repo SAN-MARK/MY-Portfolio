@@ -42,12 +42,14 @@ export interface ExperienceItem {
   company: string;
   role: string;
   period: string;
+  type?: string;
+  location?: string;
   statusText: string;
   statusType: 'in_progress' | 'active' | 'completed';
   icon: string;
-  accentColor: 'cyan' | 'pink' | 'purple';
-  colSpan: string;
-  summary: string;
+  accentColor?: 'cyan' | 'pink' | 'purple';
+  colSpan?: string;
+  summary?: string;
   points: string[];
   tags?: string[];
   link?: string;

@@ -103,22 +103,22 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
-      <div className="bg-[#161616] max-w-xl w-full h-[600px] max-h-[85vh] rounded-2xl border-4 border-[#000000] relative shadow-[8px_8px_0px_#E31E24] flex flex-col overflow-hidden">
+      <div className="bg-[#12121a] max-w-xl w-full h-[600px] max-h-[85vh] rounded-2xl border-4 border-[#050508] relative shadow-[8px_8px_0px_#6366f1] flex flex-col overflow-hidden">
         
         {/* Header Bar */}
-        <div className="p-4 bg-[#0d0d0d] border-b-2 border-[#000000] flex items-center justify-between shrink-0">
+        <div className="p-4 bg-[#0a0a0f] border-b-2 border-[#050508] flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#161616] border-2 border-[#000000] flex items-center justify-center text-[#E31E24]">
+            <div className="w-9 h-9 rounded-xl bg-[#12121a] border-2 border-[#050508] flex items-center justify-center text-[#6366f1]">
               <span className="material-symbols-outlined text-xl animate-pulse">smart_toy</span>
             </div>
             <div>
-              <h3 className="font-display font-bold text-lg text-[#F5F5F0] flex items-center gap-2">
+              <h3 className="font-display font-bold text-lg text-[#e5e5ea] flex items-center gap-2">
                 <span>SANJEEV'S AI TWIN</span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E31E24] text-[#F5F5F0] border border-[#000000] font-bold">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#6366f1] text-[#e5e5ea] border border-[#050508] font-bold">
                   ONLINE
                 </span>
               </h3>
-              <p className="text-[10px] font-mono text-[#B8B8B0] font-bold">
+              <p className="text-[10px] font-mono text-[#94949e] font-bold">
                 Powered by Gemini AI • Live Portfolio Knowledge
               </p>
             </div>
@@ -129,14 +129,14 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
               soundEffects.playClick();
               onClose();
             }}
-            className="p-1.5 rounded-lg bg-[#161616] border-2 border-[#000000] text-[#B8B8B0] hover:text-[#F5F5F0] cursor-pointer"
+            className="p-1.5 rounded-lg bg-[#12121a] border-2 border-[#050508] text-[#94949e] hover:text-[#e5e5ea] cursor-pointer"
           >
             <span className="material-symbols-outlined text-base">close</span>
           </button>
         </div>
 
         {/* Message History */}
-        <div className="flex-1 p-4 overflow-y-auto space-y-3 font-sans text-xs bg-[#0d0d0d]">
+        <div className="flex-1 p-4 overflow-y-auto space-y-3 font-sans text-xs bg-[#0a0a0f]">
           {messages.map((msg) => (
             <div
               key={msg.id}
@@ -145,12 +145,12 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
               <div
                 className={`max-w-[85%] p-3 rounded-2xl space-y-1 ${
                   msg.sender === 'user'
-                    ? 'bg-[#E31E24] border-2 border-[#000000] text-[#F5F5F0] rounded-br-none shadow-[2px_2px_0px_#000000]'
-                    : 'bg-[#161616] border-2 border-[#000000] text-[#B8B8B0] rounded-bl-none shadow-[2px_2px_0px_#000000]'
+                    ? 'bg-[#6366f1] border-2 border-[#050508] text-[#e5e5ea] rounded-br-none shadow-[2px_2px_0px_#050508]'
+                    : 'bg-[#12121a] border-2 border-[#050508] text-[#94949e] rounded-bl-none shadow-[2px_2px_0px_#050508]'
                 }`}
               >
                 <p className="leading-relaxed font-sans">{msg.text}</p>
-                <span className="text-[9px] font-mono text-[#B8B8B0] block text-right font-bold">
+                <span className="text-[9px] font-mono text-[#94949e] block text-right font-bold">
                   {msg.timestamp}
                 </span>
               </div>
@@ -159,8 +159,8 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
 
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-[#161616] border-2 border-[#000000] p-3 rounded-2xl text-[#B8B8B0] text-xs font-mono flex items-center gap-2 shadow-[2px_2px_0px_#000000]">
-                <span className="material-symbols-outlined text-sm text-[#E31E24] animate-spin">
+              <div className="bg-[#12121a] border-2 border-[#050508] p-3 rounded-2xl text-[#94949e] text-xs font-mono flex items-center gap-2 shadow-[2px_2px_0px_#050508]">
+                <span className="material-symbols-outlined text-sm text-[#6366f1] animate-spin">
                   sync
                 </span>
                 <span>Generating response...</span>
@@ -171,40 +171,40 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
         </div>
 
         {/* Quick Suggestion Chips */}
-        <div className="p-2 bg-[#0d0d0d] border-t-2 border-[#000000] flex gap-2 overflow-x-auto shrink-0">
+        <div className="p-2 bg-[#0a0a0f] border-t-2 border-[#050508] flex gap-2 overflow-x-auto shrink-0">
           <button
             onClick={() => setInput('What are Sanjeev’s key skills?')}
-            className="px-2.5 py-1 rounded-lg bg-[#161616] border-2 border-[#000000] text-[10px] font-mono font-bold text-[#B8B8B0] hover:text-[#E31E24] whitespace-nowrap cursor-pointer"
+            className="px-2.5 py-1 rounded-lg bg-[#12121a] border-2 border-[#050508] text-[10px] font-mono font-bold text-[#94949e] hover:text-[#6366f1] whitespace-nowrap cursor-pointer"
           >
             💡 Key Skills
           </button>
           <button
             onClick={() => setInput('Tell me about Victor Academy')}
-            className="px-2.5 py-1 rounded-lg bg-[#161616] border-2 border-[#000000] text-[10px] font-mono font-bold text-[#B8B8B0] hover:text-[#E31E24] whitespace-nowrap cursor-pointer"
+            className="px-2.5 py-1 rounded-lg bg-[#12121a] border-2 border-[#050508] text-[10px] font-mono font-bold text-[#94949e] hover:text-[#6366f1] whitespace-nowrap cursor-pointer"
           >
             📱 Victor Academy
           </button>
           <button
             onClick={() => setInput('How to hire Sanjeev?')}
-            className="px-2.5 py-1 rounded-lg bg-[#161616] border-2 border-[#000000] text-[10px] font-mono font-bold text-[#B8B8B0] hover:text-[#E31E24] whitespace-nowrap cursor-pointer"
+            className="px-2.5 py-1 rounded-lg bg-[#12121a] border-2 border-[#050508] text-[10px] font-mono font-bold text-[#94949e] hover:text-[#6366f1] whitespace-nowrap cursor-pointer"
           >
             💼 How to hire
           </button>
         </div>
 
         {/* Input Bar */}
-        <form onSubmit={handleSendMessage} className="p-3 bg-[#0d0d0d] border-t-2 border-[#000000] flex gap-2 shrink-0">
+        <form onSubmit={handleSendMessage} className="p-3 bg-[#0a0a0f] border-t-2 border-[#050508] flex gap-2 shrink-0">
           <input
             type="text"
             placeholder="Ask about Sanjeev's work, experience, or hire status..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-1 px-4 py-2.5 rounded-xl bg-[#161616] border-2 border-[#000000] text-xs text-[#F5F5F0] placeholder-[#B8B8B0] focus:outline-none focus:border-[#E31E24] font-mono"
+            className="flex-1 px-4 py-2.5 rounded-xl bg-[#12121a] border-2 border-[#050508] text-xs text-[#e5e5ea] placeholder-[#94949e] focus:outline-none focus:border-[#6366f1] font-mono"
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className="btn-crimson px-4 py-2.5 rounded-xl text-xs font-headline font-bold text-[#F5F5F0] uppercase flex items-center justify-center cursor-pointer disabled:opacity-50"
+            className="btn-crimson px-4 py-2.5 rounded-xl text-xs font-headline font-bold text-[#e5e5ea] uppercase flex items-center justify-center cursor-pointer disabled:opacity-50"
           >
             <span className="material-symbols-outlined text-sm">send</span>
           </button>

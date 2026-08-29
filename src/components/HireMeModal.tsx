@@ -45,7 +45,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
-      <div className="bg-[#161616] max-w-xl w-full p-6 sm:p-8 rounded-2xl border-4 border-[#000000] relative shadow-[8px_8px_0px_#E31E24] space-y-6 max-h-[90vh] overflow-y-auto">
+      <div className="bg-[#12121a] max-w-xl w-full p-6 sm:p-8 rounded-2xl border-4 border-[#050508] relative shadow-[8px_8px_0px_#6366f1] space-y-6 max-h-[90vh] overflow-y-auto">
         
         {/* Close Button */}
         <button
@@ -53,35 +53,35 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             soundEffects.playClick();
             onClose();
           }}
-          className="absolute top-4 right-4 p-2 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] text-[#B8B8B0] hover:text-[#F5F5F0] cursor-pointer"
+          className="absolute top-4 right-4 p-2 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-[#94949e] hover:text-[#e5e5ea] cursor-pointer"
         >
           <span className="material-symbols-outlined text-lg">close</span>
         </button>
 
         {/* Modal Header */}
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#E31E24] font-bold uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-ping"></span>
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#6366f1] font-bold uppercase tracking-wider">
+            <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-ping"></span>
             <span>STRATEGIC COLLABORATION</span>
           </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#F5F5F0] uppercase">
-            START A <span className="text-[#E31E24]">PROJECT</span>
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#e5e5ea] uppercase">
+            START A <span className="text-[#6366f1]">PROJECT</span>
           </h2>
-          <p className="text-xs font-sans text-[#B8B8B0]">
+          <p className="text-xs font-sans text-[#94949e]">
             Fill out the scope brief below to discuss availability, milestones, and deliverables.
           </p>
         </div>
 
         {submitted ? (
-          <div className="p-6 rounded-2xl bg-[#0d0d0d] border-2 border-[#000000] text-center space-y-4 shadow-[4px_4px_0px_#E31E24]">
-            <span className="material-symbols-outlined text-5xl text-[#E31E24]">check_circle</span>
-            <h3 className="font-display font-bold text-2xl text-[#F5F5F0]">PROPOSAL TRANSMITTED!</h3>
-            <p className="text-xs text-[#B8B8B0] font-sans leading-relaxed">
+          <div className="p-6 rounded-2xl bg-[#0a0a0f] border-2 border-[#050508] text-center space-y-4 shadow-[4px_4px_0px_#6366f1]">
+            <span className="material-symbols-outlined text-5xl text-[#6366f1]">check_circle</span>
+            <h3 className="font-display font-bold text-2xl text-[#e5e5ea]">PROPOSAL TRANSMITTED!</h3>
+            <p className="text-xs text-[#94949e] font-sans leading-relaxed">
               Thank you, {formData.name}! Sanjeev has received your brief for <strong>{formData.projectType}</strong>. You'll receive a detailed response and meeting link at <strong>{formData.email}</strong> within 24 hours.
             </p>
             <button
               onClick={onClose}
-              className="btn-crimson px-6 py-2.5 rounded-xl text-xs font-headline font-bold text-[#F5F5F0] uppercase tracking-wider"
+              className="btn-crimson px-6 py-2.5 rounded-xl text-xs font-headline font-bold text-[#e5e5ea] uppercase tracking-wider"
             >
               RETURN TO PORTFOLIO
             </button>
@@ -90,7 +90,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
           <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] font-mono text-[#B8B8B0] font-bold uppercase mb-1">
+                <label className="block text-[11px] font-mono text-[#94949e] font-bold uppercase mb-1">
                   Your Full Name
                 </label>
                 <input
@@ -99,12 +99,12 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g., Alex Vance"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] text-xs text-[#F5F5F0] placeholder-[#B8B8B0] focus:outline-none focus:border-[#E31E24] font-mono"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-xs text-[#e5e5ea] placeholder-[#94949e] focus:outline-none focus:border-[#6366f1] font-mono"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono text-[#B8B8B0] font-bold uppercase mb-1">
+                <label className="block text-[11px] font-mono text-[#94949e] font-bold uppercase mb-1">
                   Email Address
                 </label>
                 <input
@@ -113,20 +113,20 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="alex@company.com"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] text-xs text-[#F5F5F0] placeholder-[#B8B8B0] focus:outline-none focus:border-[#E31E24] font-mono"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-xs text-[#e5e5ea] placeholder-[#94949e] focus:outline-none focus:border-[#6366f1] font-mono"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] font-mono text-[#B8B8B0] font-bold uppercase mb-1">
+                <label className="block text-[11px] font-mono text-[#94949e] font-bold uppercase mb-1">
                   Project Type
                 </label>
                 <select
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] text-xs text-[#F5F5F0] focus:outline-none focus:border-[#E31E24] font-mono"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-xs text-[#e5e5ea] focus:outline-none focus:border-[#6366f1] font-mono"
                 >
                   <option value="Full Stack Web App">Full Stack Web App</option>
                   <option value="UI/UX & Figma Prototype">UI/UX & Figma Prototype</option>
@@ -137,13 +137,13 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono text-[#B8B8B0] font-bold uppercase mb-1">
+                <label className="block text-[11px] font-mono text-[#94949e] font-bold uppercase mb-1">
                   Estimated Budget
                 </label>
                 <select
                   value={formData.budget}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] text-xs text-[#F5F5F0] focus:outline-none focus:border-[#E31E24] font-mono"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-xs text-[#e5e5ea] focus:outline-none focus:border-[#6366f1] font-mono"
                 >
                   <option value="₹2,500 – ₹5,000">₹2,500 – ₹5,000</option>
                   <option value="₹5,000 – ₹10,000">₹5,000 – ₹10,000</option>
@@ -156,7 +156,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             </div>
 
             <div>
-              <label className="block text-[11px] font-mono text-[#B8B8B0] font-bold uppercase mb-1">
+              <label className="block text-[11px] font-mono text-[#94949e] font-bold uppercase mb-1">
                 Project Scope & Vision
               </label>
               <textarea
@@ -165,7 +165,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                 placeholder="Describe key features, target deadline, or reference links..."
-                className="w-full px-4 py-2.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] text-xs text-[#F5F5F0] placeholder-[#B8B8B0] focus:outline-none focus:border-[#E31E24] resize-none font-sans"
+                className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-xs text-[#e5e5ea] placeholder-[#94949e] focus:outline-none focus:border-[#6366f1] resize-none font-sans"
               />
             </div>
 
@@ -173,7 +173,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
               <button
                 type="button"
                 onClick={handleWhatsAppSubmit}
-                className="w-full sm:w-1/2 btn-crimson py-3.5 rounded-xl text-xs font-headline font-bold text-[#F5F5F0] tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-1/2 btn-crimson py-3.5 rounded-xl text-xs font-headline font-bold text-[#e5e5ea] tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>VIA WHATSAPP</span>
                 <span className="material-symbols-outlined text-sm">chat</span>
@@ -182,7 +182,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
               <button
                 type="button"
                 onClick={handleEmailSubmit}
-                className="w-full sm:w-1/2 py-3.5 rounded-xl bg-[#0d0d0d] border-2 border-[#000000] hover:border-[#E31E24] text-[#F5F5F0] text-xs font-headline font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer transition-all shadow-[3px_3px_0px_#000000]"
+                className="w-full sm:w-1/2 py-3.5 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] hover:border-[#6366f1] text-[#e5e5ea] text-xs font-headline font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer transition-all shadow-[3px_3px_0px_#050508]"
               >
                 <span>VIA EMAIL</span>
                 <span className="material-symbols-outlined text-sm">mail</span>

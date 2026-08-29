@@ -225,54 +225,87 @@ export const TECHNICAL_ECOSYSTEM = {
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: "novitech",
-    company: "NoviTech R&D",
+    company: "NoviTech R&D Pvt Ltd",
     role: "Full Stack & UI/UX Intern",
-    period: "Jun 2026 - Present",
-    statusText: "🔨 IN PROGRESS",
+    period: "Jun 2026 – Present",
+    type: "Internship, Remote",
+    statusText: "IN PROGRESS",
     statusType: "in_progress",
     icon: "terminal",
     accentColor: "cyan",
-    colSpan: "md:col-span-7",
-    summary: "Immersed in cutting-edge R&D environments, bridging the gap between high-fidelity interface design and robust full-stack architecture.",
     points: [
-      "Undergoing intensive training in **MERN Stack** development and advanced **UI/UX principles**.",
-      "Architecting functional prototypes for internal product validation using React and Tailwind CSS.",
+      "Immersed in cross-functional R&D work bridging high-fidelity interface design and full-stack architecture.",
+      "Building functional prototypes for internal product validation using **React** and **Tailwind CSS**.",
       "Collaborating with senior engineers to implement responsive designs and optimize component performance."
     ],
-    tags: ["REACT", "NODE.JS", "FIGMA", "MONGODB"]
+    tags: ["UX", "UI/UX"]
   },
   {
-    id: "freelance",
-    company: "Freelance Designer",
-    role: "Independent UI/UX & Web Developer",
-    period: "Jun 2026 - Present",
-    statusText: "✓ ACTIVE",
-    statusType: "active",
-    icon: "palette",
+    id: "alfido",
+    company: "Alfido Tech",
+    role: "Frontend Developer",
+    period: "Jul 2026 – Aug 2026 (2 mos)",
+    type: "Internship, Remote",
+    statusText: "COMPLETED",
+    statusType: "completed",
+    icon: "code",
     accentColor: "pink",
-    colSpan: "md:col-span-5",
-    summary: "Operating as an independent designer and web developer, delivering custom digital products and design systems.",
     points: [
-      "Designing responsive web application layouts and interactive Figma prototypes.",
-      "Building performant client-facing websites using modern HTML/CSS, React, and Tailwind CSS."
+      "Immersed in a dynamic internship focused on developing frontend development skills.",
+      "Worked on front-end features with attention to UI/UX consistency."
     ],
-    link: "linkedin.com/in/sanjeeveditor2008"
+    tags: ["Front-End Development", "UI/UX"]
+  },
+  {
+    id: "dominos",
+    company: "Domino's",
+    role: "Guest Delight Associate",
+    period: "Feb 2026 – May 2026 (4 mos)",
+    type: "Part-time, On-site",
+    location: "Chennai, Tamil Nadu, India",
+    statusText: "COMPLETED",
+    statusType: "completed",
+    icon: "storefront",
+    accentColor: "purple",
+    points: [
+      "Delivered efficient order taking, billing, and customer query resolution in a fast-paced setting.",
+      "Maintained high hygiene and food safety standards for the store."
+    ],
+    tags: ["Sales Operations"]
   },
   {
     id: "marpu",
-    company: "Marpu Foundation",
-    role: "Marketing & Video Editing Intern",
-    period: "Dec 2025 - Jan 2026",
-    statusText: "✓ COMPLETED",
+    company: "Marpu Foundation (India's Top NGO)",
+    role: "Social Media Marketing Intern",
+    period: "Dec 2025 – Jan 2026 (2 mos)",
+    type: "Internship, Remote",
+    statusText: "COMPLETED",
     statusType: "completed",
     icon: "campaign",
-    accentColor: "purple",
-    colSpan: "md:col-span-12",
-    summary: "Driven content strategy execution, poster design, and video editing for social initiatives.",
+    accentColor: "cyan",
     points: [
+      "Drove content strategy execution, poster design, and video editing for social initiatives.",
       "Created high-engagement video edits and graphic assets across social channels.",
       "Supported community reach through visual storytelling and campaign design."
-    ]
+    ],
+    tags: ["NGO", "Video Editing"]
+  },
+  {
+    id: "supermarket",
+    company: "Local Supermarket",
+    role: "Data Entry Specialist",
+    period: "Apr 2025 – Jun 2025 (3 mos)",
+    type: "Full-time, On-site",
+    location: "Chennai, Tamil Nadu, India",
+    statusText: "COMPLETED",
+    statusType: "completed",
+    icon: "table_chart",
+    accentColor: "pink",
+    points: [
+      "Entered and maintained accurate customer data using **Microsoft Excel**.",
+      "Managed purchase records and contact details for the store's customer database."
+    ],
+    tags: ["Customer Data"]
   }
 ];
 

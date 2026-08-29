@@ -69,7 +69,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#0a0a0a] text-[#e1e3e4] relative selection:bg-[#ff4d80] selection:text-white ${scanlinesEnabled ? 'scanlines-overlay' : ''}`}>
+    <div className={`min-h-screen bg-[#0a0a0f] text-[#e5e5ea] relative selection:bg-[#6366f1] selection:text-white ${scanlinesEnabled ? 'scanlines-overlay' : ''}`}>
       {/* Custom Cursor Follower */}
       <CustomCursor />
 
@@ -165,7 +165,7 @@ export default function App() {
             soundEffects.playBeep();
             setAiModalOpen(true);
           }}
-          className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#1a1a2e]/90 border border-[#00fbfb] text-[#00fbfb] shadow-[0_0_20px_rgba(0,251,251,0.4)] backdrop-blur-md hover:scale-105 transition-all text-xs font-mono group"
+          className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#12121a]/90 border border-[#6366f1] text-[#6366f1] shadow-[0_0_20px_rgba(99,102,241,0.3)] backdrop-blur-md hover:scale-105 transition-all text-xs font-mono group"
         >
           <span className="material-symbols-outlined text-base animate-pulse">smart_toy</span>
           <span className="font-bold">Ask AI Twin</span>
