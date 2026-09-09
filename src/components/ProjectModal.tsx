@@ -23,8 +23,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   if (!project && !isVictorPrototype) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-lg animate-fadeIn overflow-y-auto">
-      <div className="bg-[#12121a] max-w-4xl w-full p-6 sm:p-8 rounded-2xl border-4 border-[#050508] relative shadow-[8px_8px_0px_#6366f1] space-y-6 my-8 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fadeIn overflow-y-auto">
+      <div className="bg-[#0e0e16] max-w-4xl w-full p-6 sm:p-8 rounded-2xl border-4 border-[#040406] relative shadow-[8px_8px_0px_#fbbf24] space-y-6 my-8 max-h-[90vh] overflow-y-auto">
         
         {/* Close Button */}
         <button
@@ -32,7 +32,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             soundEffects.playClick();
             onClose();
           }}
-          className="absolute top-4 right-4 p-2 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-[#94949e] hover:text-[#e5e5ea] z-20 cursor-pointer"
+          className="absolute top-4 right-4 p-2 rounded-xl bg-[#07070a] border-2 border-[#040406] text-[#9ca3af] hover:text-[#00f0ff] z-20 cursor-pointer shadow-[2px_2px_0px_#040406]"
         >
           <span className="material-symbols-outlined text-lg">close</span>
         </button>
@@ -41,19 +41,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           /* Vector Arts Academy / VVI Prototype Interactive Viewer */
           <div className="space-y-6">
             <div className="space-y-1">
-              <span className="font-mono text-xs text-[#6366f1] uppercase tracking-widest block font-bold">
-                ▸ FEATURED PROTOTYPE AUDIT
+              <span className="font-mono text-xs text-[#fbbf24] uppercase tracking-widest block font-bold">
+                ▸ SIGNATURE MISSION // TACTICAL BLUEPRINT
               </span>
-              <h2 className="font-display font-black text-3xl sm:text-4xl text-[#e5e5ea]">
+              <h2 className="font-display font-black text-3xl sm:text-4xl text-[#f3f4f6]">
                 {FEATURED_PROJECT.title}
               </h2>
-              <p className="text-xs text-[#94949e] font-sans">
-                15+ Figma Screens • Interactive Student & Campus Event Management Architecture
+              <p className="text-xs text-[#9ca3af] font-sans">
+                15+ Screens • Interactive Student & Campus Event Management Architecture
               </p>
             </div>
 
             {/* View Mode Toggle: App Screen vs Figma Embed */}
-            <div className="flex items-center justify-between border-b-2 border-[#050508] pb-3">
+            <div className="flex items-center justify-between border-b-2 border-[#040406] pb-3">
               <div className="flex items-center gap-2 overflow-x-auto">
                 {FEATURED_PROJECT.mockups.map((m, idx) => (
                   <button
@@ -63,10 +63,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                       setViewMode('app');
                       setActiveMockupIdx(idx);
                     }}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all whitespace-nowrap border-2 border-[#050508] cursor-pointer ${
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all whitespace-nowrap border-2 border-[#040406] cursor-pointer ${
                       viewMode === 'app' && activeMockupIdx === idx
-                        ? 'bg-[#6366f1] text-[#e5e5ea] shadow-[2px_2px_0px_#050508]'
-                        : 'bg-[#0a0a0f] text-[#94949e] hover:text-[#e5e5ea]'
+                        ? 'bg-[#e21d24] text-white shadow-[2px_2px_0px_#fbbf24]'
+                        : 'bg-[#07070a] text-[#9ca3af] hover:text-[#00f0ff]'
                     }`}
                   >
                     Screen 0{idx + 1}: {m.title.split(' ')[0]}
@@ -77,10 +77,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setViewMode(viewMode === 'app' ? 'figma' : 'app')}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-mono border-2 border-[#050508] font-bold transition-all flex items-center gap-1 cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-mono border-2 border-[#040406] font-bold transition-all flex items-center gap-1 cursor-pointer ${
                     viewMode === 'figma'
-                      ? 'bg-[#6366f1] text-[#e5e5ea] shadow-[2px_2px_0px_#050508]'
-                      : 'bg-[#0a0a0f] text-[#e5e5ea]'
+                      ? 'bg-[#e21d24] text-white shadow-[2px_2px_0px_#fbbf24]'
+                      : 'bg-[#07070a] text-[#f3f4f6] hover:text-[#00f0ff]'
                   }`}
                 >
                   <span className="material-symbols-outlined text-sm">integration_instructions</span>
@@ -93,7 +93,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
               
               {/* Phone App / Embedded Prototype */}
-              <div className="md:col-span-6 bg-[#0a0a0f] p-2 rounded-2xl border-3 border-[#050508] shadow-[4px_4px_0px_#050508] mx-auto overflow-hidden flex items-center justify-center w-full min-h-[460px]">
+              <div className="md:col-span-6 bg-[#07070a] p-2 rounded-2xl border-3 border-[#040406] shadow-[4px_4px_0px_#040406] mx-auto overflow-hidden flex items-center justify-center w-full min-h-[460px]">
                 {viewMode === 'figma' ? (
                   <iframe
                     className="w-full h-[460px] rounded-xl border-0"
@@ -111,16 +111,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
               {/* Specs & Mechanics */}
               <div className="md:col-span-6 space-y-4 text-left">
-                <h3 className="font-headline font-bold text-xl text-[#e5e5ea]">
+                <h3 className="font-headline font-bold text-xl text-[#f3f4f6]">
                   0{activeMockupIdx + 1}. {FEATURED_PROJECT.mockups[activeMockupIdx].title}
                 </h3>
-                <p className="text-xs text-[#94949e] font-sans leading-relaxed">
+                <p className="text-xs text-[#9ca3af] font-sans leading-relaxed">
                   {FEATURED_PROJECT.mockups[activeMockupIdx].description}
                 </p>
 
-                <div className="p-4 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] shadow-[3px_3px_0px_#050508] space-y-2 text-xs font-mono">
-                  <div className="text-[#6366f1] font-bold">Key UX Mechanics:</div>
-                  <ul className="space-y-1.5 text-[#94949e] list-disc list-inside text-[11px]">
+                <div className="p-4 rounded-xl bg-[#07070a] border-2 border-[#040406] shadow-[3px_3px_0px_#040406] space-y-2 text-xs font-mono">
+                  <div className="text-[#fbbf24] font-bold">Key UX Mechanics:</div>
+                  <ul className="space-y-1.5 text-[#9ca3af] list-disc list-inside text-[11px]">
                     <li>Authentic yellow geometric vector branding (`#facc15`)</li>
                     <li>Student roll number SSO authentication (VVI2024105)</li>
                     <li>Campus events pre-registration (Sports Day, Hackathons)</li>
@@ -134,7 +134,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => soundEffects.playClick()}
-                    className="btn-crimson w-full py-3.5 rounded-xl text-xs font-headline font-bold text-[#e5e5ea] uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
+                    className="btn-crimson w-full py-3.5 rounded-xl text-xs font-headline font-bold text-white uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_#040406] hover:shadow-[5px_5px_0px_#fbbf24]"
                   >
                     <span>OPEN FIGMA PROTOTYPE ↗</span>
                     <span className="material-symbols-outlined text-sm">open_in_new</span>
@@ -148,32 +148,32 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           <div className="space-y-6">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="font-mono text-xs text-[#6366f1] font-bold uppercase tracking-wider">
+                <span className="font-mono text-xs text-[#fbbf24] font-bold uppercase tracking-wider">
                   {project.category}
                 </span>
-                <span className="text-[#050508]">•</span>
-                <span className="font-mono text-xs text-[#e5e5ea] font-bold">{project.badge}</span>
+                <span className="text-[#040406]">•</span>
+                <span className="font-mono text-xs text-[#f3f4f6] font-bold">{project.badge}</span>
               </div>
 
-              <h2 className="font-display font-black text-4xl text-[#e5e5ea]">
+              <h2 className="font-display font-black text-4xl text-[#f3f4f6]">
                 {project.title}
               </h2>
             </div>
 
-            <p className="text-sm text-[#94949e] font-sans leading-relaxed">
+            <p className="text-sm text-[#9ca3af] font-sans leading-relaxed">
               {project.details?.overview || project.description}
             </p>
 
             {/* Key Features */}
             {project.details?.keyFeatures && (
               <div className="space-y-2">
-                <h3 className="font-mono text-xs text-[#6366f1] uppercase tracking-wider font-bold">
+                <h3 className="font-mono text-xs text-[#fbbf24] uppercase tracking-wider font-bold">
                   Key System Modules:
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {project.details.keyFeatures.map((feat, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-xs font-sans text-[#94949e] flex items-start gap-2 shadow-[2px_2px_0px_#050508]">
-                      <span className="material-symbols-outlined text-[#6366f1] text-sm shrink-0">
+                    <div key={idx} className="p-3 rounded-xl bg-[#07070a] border-2 border-[#040406] text-xs font-sans text-[#9ca3af] flex items-start gap-2 shadow-[2px_2px_0px_#040406]">
+                      <span className="material-symbols-outlined text-[#e21d24] text-sm shrink-0">
                         check_circle
                       </span>
                       <span>{feat}</span>
@@ -185,11 +185,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
             {/* Impact Metric */}
             {project.details?.impact && (
-              <div className="p-4 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] shadow-[3px_3px_0px_#6366f1] space-y-1">
-                <span className="font-mono text-[10px] text-[#6366f1] uppercase tracking-widest block font-bold">
-                  SYSTEM IMPACT AUDIT
+              <div className="p-4 rounded-xl bg-[#07070a] border-2 border-[#040406] shadow-[3px_3px_0px_#fbbf24] space-y-1">
+                <span className="font-mono text-[10px] text-[#fbbf24] uppercase tracking-widest block font-bold">
+                  MISSION IMPACT AUDIT
                 </span>
-                <p className="text-xs text-[#e5e5ea] font-sans font-medium">
+                <p className="text-xs text-[#f3f4f6] font-sans font-medium">
                   {project.details.impact}
                 </p>
               </div>
@@ -197,14 +197,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
             {/* Tech Stack Tags */}
             <div className="space-y-2">
-              <span className="font-mono text-[10px] text-[#94949e] uppercase tracking-widest block font-bold">
+              <span className="font-mono text-[10px] text-[#9ca3af] uppercase tracking-widest block font-bold">
                 Technologies Used:
               </span>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 rounded-lg bg-[#0a0a0f] border-2 border-[#050508] text-xs font-mono font-bold text-[#e5e5ea]"
+                    className="px-3 py-1 rounded-lg bg-[#07070a] border-2 border-[#040406] text-xs font-mono font-bold text-[#f3f4f6] shadow-[2px_2px_0px_#040406]"
                   >
                     {t}
                   </span>
@@ -212,14 +212,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               </div>
             </div>
 
-            <div className="pt-4 border-t-2 border-[#050508] flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="pt-4 border-t-2 border-[#040406] flex flex-col sm:flex-row items-center justify-between gap-3">
               {(project.linkUrl || project.details?.linkUrl) ? (
                 <a
                   href={project.linkUrl || project.details?.linkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => soundEffects.playClick()}
-                  className="btn-crimson w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-headline font-bold text-[#e5e5ea] uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
+                  className="btn-crimson w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-headline font-bold text-white uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_#040406] hover:shadow-[5px_5px_0px_#fbbf24]"
                 >
                   <span>
                     {project.id === 'pcas'
@@ -233,7 +233,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               ) : <div />}
               <button
                 onClick={onClose}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] hover:border-[#6366f1] text-xs font-headline font-bold text-[#e5e5ea] uppercase tracking-wider cursor-pointer shadow-[3px_3px_0px_#050508]"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#07070a] border-2 border-[#040406] hover:border-[#00f0ff] text-xs font-headline font-bold text-[#f3f4f6] uppercase tracking-wider cursor-pointer shadow-[3px_3px_0px_#040406]"
               >
                 CLOSE AUDIT
               </button>

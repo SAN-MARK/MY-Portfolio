@@ -11,9 +11,9 @@ export const VVIAppScreen: React.FC<VVIAppScreenProps> = ({
   onSelectScreen,
   figmaUrl = 'https://www.figma.com/proto/Rs6ctoMQsLBJvjQPXk4Unp?node-id=0-1&t=cPjENYqQ66Twwfnb-6',
 }) => {
-  const [username, setUsername] = useState('Ruturaj');
+  const [username, setUsername] = useState('Sanjeev M');
   const [password, setPassword] = useState('••••••••');
-  const [fullName, setFullName] = useState('Ruturaj');
+  const [fullName, setFullName] = useState('Sanjeev M');
   const [rollNumber, setRollNumber] = useState('VVI2024105');
   const [department, setDepartment] = useState('Computer Applications');
   const [teamName, setTeamName] = useState('');

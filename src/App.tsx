@@ -9,6 +9,8 @@ import { CoursesSection } from './components/CoursesSection';
 import { GitHubSection } from './components/GitHubSection';
 import { AchievementsSection } from './components/AchievementsSection';
 import { ExperienceSection } from './components/ExperienceSection';
+import { YouTubeSection } from './components/YouTubeSection';
+import { LinkedInSection } from './components/LinkedInSection';
 import { ContactSection } from './components/ContactSection';
 import { FooterSection } from './components/FooterSection';
 import { HireMeModal } from './components/HireMeModal';
@@ -30,7 +32,7 @@ export default function App() {
 
   // Active section scroll observer
   useEffect(() => {
-    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'courses', 'github', 'achievements', 'experience', 'contact'];
+    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'courses', 'github', 'achievements', 'experience', 'youtube', 'linkedin', 'contact'];
     
     const handleScroll = () => {
       const scrollPos = window.scrollY + 200;
@@ -128,7 +130,13 @@ export default function App() {
         {/* 08. Experience */}
         <ExperienceSection />
 
-        {/* 07. Contact & Message Dispatch */}
+        {/* 09. YouTube Channel: Unknown BCA Guy */}
+        <YouTubeSection />
+
+        {/* 10. LinkedIn Social-Proof Strip */}
+        <LinkedInSection />
+
+        {/* 11. Contact & Message Dispatch */}
         <ContactSection
           onOpenHireModal={() => setHireModalOpen(true)}
         />

@@ -8,12 +8,13 @@ export const PROFILE_DATA = {
   profileImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBcHea4EVeOy5Oi1PeoQ9zE9MubaqW755ib55W0LtHDvpPLCM30sabHjLATKo60OEllwzj0nT36frc_S8BubmsLjpXKSZ1EgKkbS7O93touy3doU7bIjGUg4YMjwgKfYDx_CtkTmkyBSTNfkh6UNenfzHYC0OjasdlWJmHapYi75GY0Qwcv0JxgWS5XOqWeV6p7OcTEp3bhR7qcBjQMhj_eNiWthw1-46ew4Edli81GzQFFzx4osBwGARzQRuzVAozvFvcjLkEyVYC",
   statsSummary: [
     { label: "3 LIVE PRODUCTION APPS" },
-    { label: "15+ FIGMA SCREENS" },
+    { label: "25+ FIGMA SCREENS" },
     { label: "3 TECH CERTIFICATIONS" }
   ],
   email: "iamheresanjeev@gmail.com",
   phone: "+91 8668045519",
   linkedinUrl: "https://www.linkedin.com/in/sanjeeveditor2008/",
+  youtubeUrl: "https://youtube.com/@unknownbcaguy?si=E3NTMf5Yutw_3yvh",
   githubUrl: "https://github.com/SAN-MARK",
   figmaUrl: "https://www.figma.com/files/team/1575329476930413989/recents-and-sharing?fuid=1575329474537283794",
   twitterUrl: "https://twitter.com",
@@ -42,9 +43,9 @@ export const STATS_DATA: StatItem[] = [
     id: "github_repos",
     title: "GITHUB REPOSITORIES",
     icon: "code",
-    value: "12+",
+    value: "7",
     subValue: "Public",
-    subLabel: "open source & builds",
+    subLabel: "repositories maintained",
     accentColor: "purple"
   },
   {
@@ -161,14 +162,14 @@ export const CREATIVE_MEDIA_WORK = {
 
 export const FEATURED_PROJECT = {
   id: "victor_academy",
-  badge: "▸ FEATURED PROJECT",
+  badge: "▸ FEATURED MISSION",
   title: "VECTOR ARTS ACADEMY (VVI)",
   subtitle: "Student & Campus Event Tracking App",
   figmaUrl: "https://www.figma.com/proto/Rs6ctoMQsLBJvjQPXk4Unp?node-id=0-1&t=cPjENYqQ66Twwfnb-6",
   figmaEmbedUrl: "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRs6ctoMQsLBJvjQPXk4Unp%3Fnode-id%3D0-1%26t%3DcPjENYqQ66Twwfnb-6",
-  description: "Complete campus event & student internship management application designed in Figma with 15+ interactive screens. Features VVI student login portal, roll-number verification, upcoming events directory, and instant pre-registration.",
+  description: "Complete campus event & student internship management application designed in Figma with 25+ interactive prototype screens. Features VVI student login portal, roll-number verification, upcoming events directory, and instant pre-registration.",
   stats: [
-    { label: "SCREENS", value: "15+" },
+    { label: "SCREENS", value: "25+" },
     { label: "TOOL", value: "FIGMA" },
     { label: "STATUS", value: "PROTOTYPE READY" }
   ],
@@ -186,7 +187,7 @@ export const FEATURED_PROJECT = {
     {
       id: "screen3",
       title: "Event Pre-Registration Form",
-      description: "High-conversion student registration workflow pre-filled with student credentials (Ruturaj, Roll VVI2024105, Computer Applications)."
+      description: "High-conversion student registration workflow pre-filled with student credentials (Sanjeev M, Roll VVI2024105, Computer Applications)."
     }
   ]
 };

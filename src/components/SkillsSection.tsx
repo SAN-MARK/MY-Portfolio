@@ -6,23 +6,26 @@ export const SkillsSection: React.FC = () => {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
 
   return (
-    <section id="skills" className="py-20 relative bg-[#0a0a0f]">
-      {/* Subtle Divider */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6366f1] to-transparent" />
+    <section id="skills" className="py-20 relative bg-[#07070a]">
+      {/* Comic Panel Gutter */}
+      <div className="comic-gutter absolute top-0 left-0 right-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background Halftone Dots */}
+      <div className="absolute inset-0 bg-halftone-dots opacity-20 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#12121a] border-2 border-[#050508] text-xs font-mono text-[#6366f1] font-bold shadow-[2px_2px_0px_#050508]">
-            <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse"></span>
-            <span>CORE COMPETENCIES & TECH STACK</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#0f0f18] border-2 border-[#040406] text-xs font-mono text-[#fbbf24] font-bold shadow-[2px_2px_0px_#040406]">
+            <span className="w-2 h-2 rounded-full bg-[#fbbf24] animate-pulse"></span>
+            <span>ARSENAL // COMBAT-READY TECH MATRIX</span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-display font-black text-[#e5e5ea] tracking-wider uppercase">
-            SKILLS & <span className="text-[#6366f1]">EXPERTISE</span>
+          <h2 className="text-4xl sm:text-6xl font-display font-black text-[#f3f4f6] tracking-wider uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            THE <span className="crimson-text">ARSENAL</span>
           </h2>
-          <div className="w-24 h-1.5 bg-[#6366f1] mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-[#e21d24] mx-auto rounded-full shadow-[0_0_10px_rgba(226,29,36,0.6)]" />
         </div>
 
         {/* 3 Skill Category Comic Cards */}
@@ -31,29 +34,32 @@ export const SkillsSection: React.FC = () => {
             <div
               key={cat.title}
               id={`skill_card_${cat.title.toLowerCase()}`}
-              className="bg-[#12121a] rounded-2xl border-3 border-[#050508] shadow-[5px_5px_0px_#050508] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#6366f1] hover:shadow-[6px_6px_0px_#6366f1] hover:-translate-y-1 group"
+              className="comic-card rounded-2xl border-3 border-[#040406] p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden"
             >
-              <div>
+              {/* Halftone Top Corner Accent */}
+              <div className="absolute top-0 right-0 w-28 h-28 bg-halftone-dots opacity-15 pointer-events-none" />
+
+              <div className="relative z-10">
                 {/* Category Header */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-2xl p-2 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-[#6366f1]">
+                    <span className="material-symbols-outlined text-2xl p-2 rounded-xl bg-[#07070a] border-2 border-[#040406] text-[#fbbf24] shadow-[2px_2px_0px_#040406] group-hover:text-[#00f0ff] transition-colors">
                       {cat.icon}
                     </span>
-                    <h3 className="font-display font-bold text-3xl text-[#e5e5ea] tracking-wide">
+                    <h3 className="font-display font-bold text-3xl text-[#f3f4f6] tracking-wide">
                       {cat.title}
                     </h3>
                   </div>
 
-                  <span className="font-mono text-[10px] uppercase font-bold px-2.5 py-1 rounded-md bg-[#0a0a0f] border-2 border-[#050508] text-[#6366f1]">
-                    {cat.title === 'DEVELOPMENT' ? 'CORE STACK' : cat.title === 'DESIGN' ? 'PRIMARY STACK' : 'MEDIA & CREATIVE'}
+                  <span className="font-mono text-[10px] uppercase font-bold px-2.5 py-1 rounded-md bg-[#07070a] border-2 border-[#040406] text-[#e21d24] shadow-[2px_2px_0px_#040406]">
+                    {cat.title === 'DEVELOPMENT' ? 'CORE SUITE' : cat.title === 'DESIGN' ? 'PRIMARY SUITE' : 'CREATIVE OPS'}
                   </span>
                 </div>
 
                 {/* Skills Pill List */}
                 <div className="space-y-3 pt-2">
-                  <span className="font-mono text-[10px] text-[#94949e] uppercase tracking-widest block font-bold">
-                    Tools & Frameworks:
+                  <span className="font-mono text-[10px] text-[#9ca3af] uppercase tracking-widest block font-bold">
+                    Primary Weaponry & Tech:
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill) => (
@@ -63,7 +69,7 @@ export const SkillsSection: React.FC = () => {
                           soundEffects.playBeep();
                           setSelectedSkill(skill);
                         }}
-                        className="px-3 py-1.5 rounded-lg bg-[#0a0a0f] border-2 border-[#050508] text-xs font-mono font-bold text-[#e5e5ea] hover:text-[#6366f1] hover:border-[#6366f1] transition-all cursor-pointer shadow-[2px_2px_0px_#050508]"
+                        className="px-3 py-1.5 rounded-lg bg-[#07070a] border-2 border-[#040406] text-xs font-mono font-bold text-[#f3f4f6] hover:text-[#040406] hover:bg-[#00f0ff] hover:border-[#00f0ff] transition-all cursor-pointer shadow-[2px_2px_0px_#040406]"
                       >
                         {skill}
                       </button>
@@ -76,21 +82,21 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Technical Ecosystem Workspace Showcase Banner */}
-        <div className="bg-[#12121a] rounded-2xl border-4 border-[#050508] shadow-[6px_6px_0px_#050508] overflow-hidden relative group">
+        <div className="bg-[#0f0f18] rounded-2xl border-4 border-[#040406] shadow-[6px_6px_0px_#fbbf24] overflow-hidden relative group">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 p-8 sm:p-10 space-y-6 z-10 bg-[#12121a]">
-              <div className="inline-flex items-center gap-2 font-mono text-xs text-[#6366f1] uppercase tracking-widest font-bold">
-                <span className="w-2 h-2 rounded-full bg-[#6366f1]"></span>
-                <span>ARCHITECTURAL ECOSYSTEM</span>
+            <div className="lg:col-span-7 p-8 sm:p-10 space-y-6 z-10 bg-[#0f0f18]">
+              <div className="inline-flex items-center gap-2 font-mono text-xs text-[#e21d24] uppercase tracking-widest font-bold">
+                <span className="w-2 h-2 rounded-full bg-[#e21d24] animate-pulse"></span>
+                <span>WAR ROOM // ARCHITECTURAL ECOSYSTEM</span>
               </div>
 
-              <h3 className="font-display font-bold text-3xl sm:text-4xl text-[#e5e5ea]">
+              <h3 className="font-display font-bold text-3xl sm:text-4xl text-[#f3f4f6]">
                 {TECHNICAL_ECOSYSTEM.title}
               </h3>
 
-              <p className="text-[#94949e] font-sans text-sm leading-relaxed max-w-xl">
+              <p className="text-[#9ca3af] font-sans text-sm leading-relaxed max-w-xl">
                 {TECHNICAL_ECOSYSTEM.description}
               </p>
 
@@ -99,7 +105,7 @@ export const SkillsSection: React.FC = () => {
                 {TECHNICAL_ECOSYSTEM.pills.map((pill) => (
                   <span
                     key={pill}
-                    className="px-4 py-2 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] shadow-[3px_3px_0px_#050508] text-xs font-mono font-bold text-[#6366f1]"
+                    className="px-4 py-2 rounded-xl bg-[#07070a] border-2 border-[#040406] shadow-[3px_3px_0px_#040406] text-xs font-mono font-bold text-[#fbbf24]"
                   >
                     {pill}
                   </span>
@@ -112,11 +118,11 @@ export const SkillsSection: React.FC = () => {
               <img
                 src={TECHNICAL_ECOSYSTEM.bgImage}
                 alt="Workspace Engineering"
-                className="w-full h-full object-cover filter contrast-110 grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover filter contrast-125 brightness-90 grayscale group-hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#12121a] via-transparent to-transparent lg:block hidden" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] via-transparent to-transparent lg:hidden block" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0f0f18] via-transparent to-transparent lg:block hidden" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f18] via-transparent to-transparent lg:hidden block" />
             </div>
 
           </div>
@@ -126,15 +132,15 @@ export const SkillsSection: React.FC = () => {
 
       {/* Selected Skill Toast Popup */}
       {selectedSkill && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#12121a] p-4 rounded-xl border-3 border-[#050508] shadow-[6px_6px_0px_#6366f1] flex items-center gap-4 animate-fadeIn">
-          <span className="material-symbols-outlined text-[#6366f1] text-xl">auto_awesome</span>
+        <div className="fixed bottom-6 right-6 z-50 bg-[#0f0f18] p-4 rounded-xl border-3 border-[#040406] shadow-[6px_6px_0px_#fbbf24] flex items-center gap-4 animate-fadeIn">
+          <span className="material-symbols-outlined text-[#fbbf24] text-xl">bolt</span>
           <div>
-            <span className="font-mono text-xs text-[#6366f1] font-bold block">{selectedSkill}</span>
-            <span className="text-[11px] text-[#94949e] font-sans">Proficient in production deployment and design workflows.</span>
+            <span className="font-mono text-xs text-[#00f0ff] font-bold block">{selectedSkill}</span>
+            <span className="text-[11px] text-[#9ca3af] font-sans">Certified battle-ready in production deployments.</span>
           </div>
           <button
             onClick={() => setSelectedSkill(null)}
-            className="p-1 rounded-md hover:bg-[#0a0a0f] text-[#94949e] hover:text-[#e5e5ea] cursor-pointer"
+            className="p-1 rounded-md hover:bg-[#07070a] text-[#9ca3af] hover:text-[#f3f4f6] cursor-pointer"
           >
             <span className="material-symbols-outlined text-sm">close</span>
           </button>

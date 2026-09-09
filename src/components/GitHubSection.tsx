@@ -62,12 +62,45 @@ const FALLBACK_REPOS: GitHubRepo[] = [
     id: 104,
     name: "portfolio-ecosystem",
     full_name: "SAN-MARK/portfolio-ecosystem",
-    description: "High-contrast Crimson Web interactive portfolio application built with React, Vite, and Tailwind CSS.",
+    description: "High-contrast Superhero Comic Web interactive portfolio application built with React, Vite, and Tailwind CSS.",
     html_url: "https://github.com/SAN-MARK",
     stargazers_count: 8,
     forks_count: 3,
     language: "TypeScript",
     updated_at: "2026-07-24T18:00:00Z"
+  },
+  {
+    id: 105,
+    name: "vvi-campus-tracker",
+    full_name: "SAN-MARK/vvi-campus-tracker",
+    description: "Vector Arts Academy student registration and campus event tracker prototype with responsive mobile sandbox.",
+    html_url: "https://github.com/SAN-MARK",
+    stargazers_count: 6,
+    forks_count: 2,
+    language: "TypeScript",
+    updated_at: "2026-07-18T12:00:00Z"
+  },
+  {
+    id: 106,
+    name: "generative-ai-mastery",
+    full_name: "SAN-MARK/generative-ai-mastery",
+    description: "TN Skill and Anthropic foundational code walkthroughs, LLM agent workflows, and automation notebooks.",
+    html_url: "https://github.com/SAN-MARK",
+    stargazers_count: 9,
+    forks_count: 4,
+    language: "Python",
+    updated_at: "2026-07-10T15:45:00Z"
+  },
+  {
+    id: 107,
+    name: "cyber-defense-toolkit",
+    full_name: "SAN-MARK/cyber-defense-toolkit",
+    description: "Security auditing scripts, network reconnaissance utilities, and threat modeling reference implementation.",
+    html_url: "https://github.com/SAN-MARK",
+    stargazers_count: 5,
+    forks_count: 2,
+    language: "Shell",
+    updated_at: "2026-06-15T11:20:00Z"
   }
 ];
 
@@ -87,7 +120,7 @@ export const GitHubSection: React.FC = () => {
             login: userData.login || 'SAN-MARK',
             avatar_url: userData.avatar_url || 'https://github.com/SAN-MARK.png',
             html_url: userData.html_url || 'https://github.com/SAN-MARK',
-            public_repos: userData.public_repos || 12,
+            public_repos: userData.public_repos || 7,
             followers: userData.followers || 25,
             following: userData.following || 10,
             bio: userData.bio || 'Full Stack Developer & UI/UX Designer'
@@ -95,7 +128,7 @@ export const GitHubSection: React.FC = () => {
         }
 
         // Fetch Recent Repos
-        const reposRes = await fetch('https://api.github.com/users/SAN-MARK/repos?sort=updated&per_page=6');
+        const reposRes = await fetch('https://api.github.com/users/SAN-MARK/repos?sort=updated&per_page=10');
         if (reposRes.ok) {
           const reposData = await reposRes.json();
           if (Array.isArray(reposData) && reposData.length > 0) {
@@ -117,32 +150,41 @@ export const GitHubSection: React.FC = () => {
     : repos.filter(r => r.language === activeFilter);
 
   return (
-    <section id="github" className="py-20 relative bg-[#0a0a0f] overflow-hidden">
-      {/* Decorative Gradient Line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6366f1] to-transparent" />
+    <section id="github" className="py-24 relative bg-[#07070a] overflow-hidden">
+      {/* Comic Panel Gutter */}
+      <div className="comic-gutter absolute top-0 left-0 right-0" />
+
+      {/* Comic Halftone Pattern & Ambient Lighting */}
+      <div className="absolute inset-0 bg-halftone opacity-10 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#e21d24] to-transparent" />
+      <div className="absolute top-1/2 -right-48 w-96 h-96 bg-[#e21d24]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#00f0ff]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#12121a] border-2 border-[#050508] text-xs font-mono text-[#6366f1] font-bold shadow-[2px_2px_0px_#050508]">
-            <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-ping" />
-            <span>LIVE GITHUB ECOSYSTEM & CODE ACTIVITY</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#0e0e16] border-2 border-[#040406] text-xs font-mono text-[#fbbf24] font-bold shadow-[2px_2px_0px_#040406]">
+            <span className="w-2 h-2 rounded-full bg-[#00f0ff] animate-ping" />
+            <span>CODE VAULT & ACTIVE REPOSITORIES</span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-display font-black text-[#e5e5ea] tracking-wider uppercase">
-            OPEN SOURCE & <span className="text-[#6366f1]">REPOSITORIES</span>
+          <h2 className="text-4xl sm:text-6xl font-display font-black text-[#f3f4f6] tracking-wider uppercase">
+            THE <span className="text-[#e21d24]">VAULT</span>
           </h2>
-          <div className="w-24 h-1.5 bg-[#6366f1] mx-auto rounded-full" />
+          <p className="text-sm font-sans text-[#9ca3af] max-w-xl mx-auto">
+            Open-source mission archives, active application repositories, and public codebase implementations.
+          </p>
+          <div className="w-24 h-1.5 bg-[#e21d24] mx-auto rounded-full shadow-[0_0_8px_rgba(226,29,36,0.6)]" />
         </div>
 
         {/* GitHub User Header Card */}
-        <div className="bg-[#12121a] p-6 sm:p-8 rounded-2xl border-4 border-[#050508] shadow-[6px_6px_0px_#050508] mb-10">
+        <div className="bg-[#0e0e16] p-6 sm:p-8 rounded-2xl border-4 border-[#040406] shadow-[6px_6px_0px_#040406] mb-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             
             {/* User Profile Info */}
             <div className="flex items-center gap-5">
-              <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-3 border-[#050508] shadow-[3px_3px_0px_#6366f1] bg-[#0a0a0f]">
+              <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-3 border-[#040406] shadow-[3px_3px_0px_#e21d24] bg-[#07070a]">
                 <img
                   src={user?.avatar_url || "https://github.com/SAN-MARK.png"}
                   alt="SAN-MARK GitHub"
@@ -152,12 +194,12 @@ export const GitHubSection: React.FC = () => {
 
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-display font-bold text-2xl text-[#e5e5ea]">
+                  <h3 className="font-display font-bold text-2xl text-[#f3f4f6]">
                     @{user?.login || 'SAN-MARK'}
                   </h3>
-                  <span className="material-symbols-outlined text-[#6366f1] text-sm">verified</span>
+                  <span className="material-symbols-outlined text-[#00f0ff] text-sm">verified</span>
                 </div>
-                <p className="text-xs font-mono text-[#94949e] mt-0.5">
+                <p className="text-xs font-mono text-[#9ca3af] mt-0.5">
                   {user?.bio || 'Full Stack Developer & UI/UX Designer'}
                 </p>
               </div>
@@ -165,20 +207,20 @@ export const GitHubSection: React.FC = () => {
 
             {/* Live Metrics Grid */}
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-              <div className="px-4 py-2 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-center min-w-[100px]">
-                <span className="font-display font-bold text-2xl text-[#e5e5ea] block">
-                  {user?.public_repos || 12}
+              <div className="px-4 py-2 rounded-xl bg-[#07070a] border-2 border-[#040406] text-center min-w-[100px]">
+                <span className="font-display font-bold text-2xl text-[#f3f4f6] block">
+                  {user?.public_repos || 7}
                 </span>
-                <span className="font-mono text-[10px] text-[#94949e] font-bold uppercase tracking-widest block">
+                <span className="font-mono text-[10px] text-[#fbbf24] font-bold uppercase tracking-widest block">
                   Public Repos
                 </span>
               </div>
 
-              <div className="px-4 py-2 rounded-xl bg-[#0a0a0f] border-2 border-[#050508] text-center min-w-[100px]">
-                <span className="font-display font-bold text-2xl text-[#6366f1] block">
+              <div className="px-4 py-2 rounded-xl bg-[#07070a] border-2 border-[#040406] text-center min-w-[100px]">
+                <span className="font-display font-bold text-2xl text-[#00f0ff] block">
                   {user?.followers || 25}
                 </span>
-                <span className="font-mono text-[10px] text-[#94949e] font-bold uppercase tracking-widest block">
+                <span className="font-mono text-[10px] text-[#9ca3af] font-bold uppercase tracking-widest block">
                   Followers
                 </span>
               </div>
@@ -188,7 +230,7 @@ export const GitHubSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => soundEffects.playClick()}
-                className="btn-crimson px-5 py-3 rounded-xl text-xs font-headline font-bold text-[#e5e5ea] tracking-wider uppercase flex items-center gap-2 cursor-pointer"
+                className="btn-crimson px-5 py-3 rounded-xl text-xs font-headline font-bold text-white tracking-wider uppercase flex items-center gap-2 cursor-pointer shadow-[3px_3px_0px_#040406]"
               >
                 <span>VIEW PROFILE</span>
                 <span className="material-symbols-outlined text-sm">open_in_new</span>
@@ -201,8 +243,8 @@ export const GitHubSection: React.FC = () => {
         {/* Filter Pills Bar */}
         <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
           <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0">
-            <span className="font-mono text-xs text-[#94949e] font-bold uppercase mr-2 flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm text-[#6366f1]">filter_alt</span>
+            <span className="font-mono text-xs text-[#9ca3af] font-bold uppercase mr-2 flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm text-[#fbbf24]">filter_alt</span>
               Filter:
             </span>
             {languages.map((lang) => (
@@ -212,10 +254,10 @@ export const GitHubSection: React.FC = () => {
                   soundEffects.playBeep();
                   setActiveFilter(lang);
                 }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border-2 border-[#050508] cursor-pointer ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border-2 border-[#040406] cursor-pointer ${
                   activeFilter === lang
-                    ? 'bg-[#6366f1] text-[#e5e5ea] shadow-[2px_2px_0px_#050508]'
-                    : 'bg-[#12121a] text-[#94949e] hover:text-[#e5e5ea]'
+                    ? 'bg-[#e21d24] text-white shadow-[2px_2px_0px_#fbbf24]'
+                    : 'bg-[#0e0e16] text-[#9ca3af] hover:text-[#00f0ff]'
                 }`}
               >
                 {lang}
@@ -223,7 +265,7 @@ export const GitHubSection: React.FC = () => {
             ))}
           </div>
 
-          <span className="font-mono text-xs text-[#94949e] font-bold">
+          <span className="font-mono text-xs text-[#9ca3af] font-bold">
             Showing {filteredRepos.length} repositories
           </span>
         </div>
@@ -233,43 +275,39 @@ export const GitHubSection: React.FC = () => {
           {filteredRepos.map((repo) => (
             <div
               key={repo.id}
-              className="bg-[#12121a] rounded-2xl border-3 border-[#050508] shadow-[5px_5px_0px_#050508] p-6 flex flex-col justify-between hover:border-[#6366f1] hover:shadow-[6px_6px_0px_#6366f1] transition-all duration-300 group hover:-translate-y-1"
+              className="bg-[#0e0e16] rounded-2xl border-3 border-[#040406] shadow-[5px_5px_0px_#040406] p-6 flex flex-col justify-between hover:border-[#00f0ff] hover:shadow-[6px_6px_0px_#00f0ff] transition-all duration-300 group hover:-translate-y-1"
             >
               <div>
                 {/* Top Row: Title & Language Badge */}
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#6366f1] text-lg">
+                    <span className="material-symbols-outlined text-[#e21d24] text-lg">
                       folder_code
                     </span>
-                    <h4 className="font-display font-bold text-2xl text-[#e5e5ea] group-hover:text-[#6366f1] transition-colors truncate max-w-[180px]">
+                    <h4 className="font-display font-bold text-2xl text-[#f3f4f6] group-hover:text-[#00f0ff] transition-colors truncate max-w-[180px]">
                       {repo.name}
                     </h4>
                   </div>
 
                   {repo.language && (
-                    <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded-md border-2 border-[#050508] bg-[#6366f1]/15 text-[#6366f1]">
+                    <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded-md border-2 border-[#040406] bg-[#f59e0b]/15 text-[#fbbf24]">
                       {repo.language}
                     </span>
                   )}
                 </div>
 
                 {/* Description */}
-                <p className="text-xs font-sans text-[#94949e] line-clamp-3 mb-6 leading-relaxed">
+                <p className="text-xs font-sans text-[#9ca3af] line-clamp-3 mb-6 leading-relaxed">
                   {repo.description || 'Public GitHub repository codebase and feature implementation.'}
                 </p>
               </div>
 
-              {/* Bottom Row: Stars, Forks, & Link */}
-              <div className="pt-4 border-t-2 border-[#050508] flex items-center justify-between">
-                <div className="flex items-center gap-4 text-xs font-mono text-[#94949e] font-bold">
-                  <span className="flex items-center gap-1 hover:text-[#6366f1] transition-colors">
-                    <span className="material-symbols-outlined text-sm text-[#6366f1]">star</span>
-                    {repo.stargazers_count}
-                  </span>
-                  <span className="flex items-center gap-1 hover:text-[#6366f1] transition-colors">
-                    <span className="material-symbols-outlined text-sm text-[#6366f1]">fork_right</span>
-                    {repo.forks_count}
+              {/* Bottom Row: Actively Maintained Status Tag & Code Link */}
+              <div className="pt-4 border-t-2 border-[#040406] flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
+                  <span className="text-[10px] font-mono text-[#fbbf24] font-bold uppercase tracking-wider">
+                    ACTIVELY MAINTAINED
                   </span>
                 </div>
 
@@ -278,7 +316,7 @@ export const GitHubSection: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => soundEffects.playClick()}
-                  className="text-xs font-mono text-[#6366f1] hover:text-[#e5e5ea] flex items-center gap-1 transition-colors font-bold"
+                  className="text-xs font-mono text-[#00f0ff] hover:text-white flex items-center gap-1 transition-colors font-bold"
                 >
                   <span>CODE</span>
                   <span className="material-symbols-outlined text-xs">open_in_new</span>
@@ -295,10 +333,10 @@ export const GitHubSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundEffects.playClick()}
-            className="btn-crimson inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xs font-headline font-bold tracking-widest uppercase transition-all"
+            className="btn-crimson inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xs font-headline font-bold tracking-widest uppercase transition-all shadow-[4px_4px_0px_#040406] hover:shadow-[6px_6px_0px_#fbbf24]"
           >
             <span className="material-symbols-outlined text-base">code</span>
-            <span>EXPLORE ALL REPOSITORIES ON GITHUB ↗</span>
+            <span>EXPLORE ALL REPOSITORIES IN THE VAULT ↗</span>
           </a>
         </div>
 
