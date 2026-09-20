@@ -243,38 +243,6 @@ export const TECHNICAL_ECOSYSTEM = {
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
-    id: "shecan",
-    company: "She Can Foundation (via Internshala)",
-    role: "Frontend Development Intern",
-    period: "Jun 2026 – Aug 2026 (2 mos)",
-    type: "Internship, Remote",
-    statusText: "COMPLETED",
-    statusType: "completed",
-    icon: "code",
-    accentColor: "pink",
-    points: [
-      "Developed and optimized frontend interfaces for a social impact organization.",
-      "Collaborated remotely with the team to deliver web development tasks and responsive layouts."
-    ],
-    tags: ["Frontend Development", "Remote"]
-  },
-  {
-    id: "thiranex",
-    company: "Thiranex",
-    role: "UI/UX Designer Intern",
-    period: "Jun 2026 – Jul 2026 (1 mo)",
-    type: "Internship, Remote",
-    statusText: "COMPLETED",
-    statusType: "completed",
-    icon: "token",
-    accentColor: "cyan",
-    points: [
-      "Designed user interfaces and interactive prototypes using Figma for remote clients.",
-      "Implemented Google Material Design principles and created wireframes for user testing."
-    ],
-    tags: ["UI/UX", "Figma", "Remote"]
-  },
-  {
     id: "novitech",
     company: "NoviTech R&D Pvt Ltd",
     role: "Full Stack & UI/UX Intern",
