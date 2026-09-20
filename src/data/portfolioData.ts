@@ -122,7 +122,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     actionText: "VISIT FINDBACK ↗",
     actionType: "case_study",
     accentColor: "cyan",
-    linkUrl: "https://findback-84.vercel.app/",
+    linkUrl: "https://findback-331036023954.asia-southeast1.run.app/",
     details: {
       overview: "FindBack is a live web application connecting finders, neighborhood drop-off hubs, and item owners. Features Google Auth, 3 real database tables (Users, Found Items, Verification), and interactive satellite mapping centered in Chennai.",
       keyFeatures: [
@@ -132,8 +132,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
         "24-hr Return SLA, Instant Finder Rewards, and Fraud-Proof Verification"
       ],
       techStack: ["React", "TypeScript", "Tailwind CSS", "Vercel", "Google Auth", "Sheet.best / DB"],
-      impact: "Live production web application deployed at findback-84.vercel.app with 24-hr SLA.",
-      linkUrl: "https://findback-84.vercel.app/"
+      impact: "Live production web application deployed at https://findback-331036023954.asia-southeast1.run.app/ with 24-hr SLA.",
+      linkUrl: "https://findback-331036023954.asia-southeast1.run.app/"
     }
   }
 ];
@@ -175,7 +175,7 @@ export const FEATURED_ACHIEVEMENT = {
     { label: "Team", value: "Trio Thunders" }
   ],
   tags: ["Startup Pitch", "Live MVP", "Supabase", "Gemini AI"],
-  link: "https://findback-ai.run.app"
+  link: "https://findback-331036023954.asia-southeast1.run.app/"
 };
 
 export const FEATURED_PROJECT = {
