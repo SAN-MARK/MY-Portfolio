@@ -18,6 +18,7 @@ import { HireMeModal } from './components/HireMeModal';
 import { ProjectModal } from './components/ProjectModal';
 import { AiAssistantModal } from './components/AiAssistantModal';
 import { CustomCursor } from './components/CustomCursor';
+import { SEO } from './components/SEO';
 import { ProjectItem } from './types';
 import { soundEffects } from './utils/audio';
 
@@ -73,6 +74,9 @@ export default function App() {
 
   return (
     <div className={`min-h-screen bg-[#0F1419] text-[#F5F3EE] relative selection:bg-[#C9A961] selection:text-[#0F1419] ${scanlinesEnabled ? 'scanlines-overlay' : ''}`}>
+      {/* Dynamic SEO & Open Graph Meta Tags */}
+      <SEO />
+
       {/* Custom Cursor Follower */}
       <CustomCursor />
 
@@ -87,9 +91,8 @@ export default function App() {
         onToggleSound={handleToggleSound}
       />
 
-      {/* Main Sections Stack */}
+      {/* Main Sections Stack with .section-divider rhythms */}
       <main className="relative">
-        {/* 01. Hero Section */}
         <HeroSection
           onExploreWork={() => {
             const el = document.getElementById('work');
@@ -99,10 +102,10 @@ export default function App() {
           onOpenAiModal={() => setAiModalOpen(true)}
         />
 
-        {/* 02. By The Numbers */}
+        <div className="section-divider" />
         <ByTheNumbersSection />
 
-        {/* 03. Selected Work */}
+        <div className="section-divider" />
         <SelectedWorkSection
           onSelectProject={(proj) => {
             setIsVictorModal(false);
@@ -111,36 +114,36 @@ export default function App() {
           onOpenHireModal={() => setHireModalOpen(true)}
         />
 
-        {/* 04. Featured Project (Victor Academy) */}
+        <div className="section-divider" />
         <FeaturedProjectSection
           onOpenPrototypeModal={handleOpenVictorPrototype}
         />
 
-        {/* 05. Skills & Expertise */}
+        <div className="section-divider" />
         <SkillsSection />
 
-        {/* 06. Courses & Certifications */}
+        <div className="section-divider" />
         <CoursesSection />
 
-        {/* 07. GitHub Real-Time Metrics & Repos */}
+        <div className="section-divider" />
         <GitHubSection />
 
-        {/* 08. Achievements & Campus Events */}
+        <div className="section-divider" />
         <AchievementsSection />
 
-        {/* 09. Experience */}
+        <div className="section-divider" />
         <ExperienceSection />
 
-        {/* 10. Mentor Testimonial */}
+        <div className="section-divider" />
         <TestimonialSection />
 
-        {/* 11. YouTube Channel: Unknown BCA Guy */}
+        <div className="section-divider" />
         <YouTubeSection />
 
-        {/* 12. LinkedIn Social-Proof Strip */}
+        <div className="section-divider" />
         <LinkedInSection />
 
-        {/* 13. Contact & Message Dispatch */}
+        <div className="section-divider" />
         <ContactSection />
       </main>
 

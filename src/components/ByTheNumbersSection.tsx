@@ -1,5 +1,6 @@
 import React from 'react';
 import { STATS_DATA } from '../data/portfolioData';
+import { PullQuote } from './PullQuote';
 
 export const ByTheNumbersSection: React.FC = () => {
   return (
@@ -11,14 +12,14 @@ export const ByTheNumbersSection: React.FC = () => {
           <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#C9A961] font-semibold block mb-2">
             About & Key Metrics
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#F5F3EE] tracking-tight">
+          <h2 className="font-serif font-bold text-[#F5F3EE] tracking-tight">
             Impact <span className="italic font-normal text-[#C9A961]">By Numbers</span>
           </h2>
           <div className="w-12 h-0.5 bg-[#C9A961] mt-4" />
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {STATS_DATA.map((stat) => (
             <div
               key={stat.id}
@@ -28,7 +29,7 @@ export const ByTheNumbersSection: React.FC = () => {
                 <span className="font-sans text-xs uppercase tracking-[0.15em] text-[#C9A961] font-semibold block">
                   {stat.title}
                 </span>
-                <span className="font-serif font-bold text-5xl text-[#F5F3EE] block">
+                <span className="font-serif font-bold text-5xl text-[#C9A961] block">
                   {stat.value}
                 </span>
               </div>
@@ -40,6 +41,12 @@ export const ByTheNumbersSection: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Integrated PullQuote Component */}
+        <PullQuote
+          quote="From starting with zero tech background and borrowing a laptop in 2013 under a TN Govt scheme, to building full-stack AI networks and mentoring 25+ peers — engineering is about democratizing access."
+          author="Sanjeev M, BCA Student & Full-Stack Developer"
+        />
 
       </div>
     </section>

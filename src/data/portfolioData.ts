@@ -118,7 +118,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     badge: "✓ LIVE",
     badgeType: "live",
     description: "Hyperlocal drop-off hubs + web application returning lost valuables to owners fast. Integrated with Google Auth, 3-table database, interactive maps, and auto-deploy.",
-    tags: ["REACT", "VERCEL", "MAPS", "DATABASE"],
+    tags: ["REACT", "VERCEL", "MAPS", "DATABASE", "AI"],
     actionText: "VISIT FINDBACK ↗",
     actionType: "case_study",
     accentColor: "cyan",
