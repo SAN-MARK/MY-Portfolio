@@ -203,3 +203,41 @@ h3 {
     break-inside: avoid;
   }
 }
+
+/* Light Mode Support */
+.light-mode {
+  --bg-primary: #F9F8F6;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-input: #F1F0EC;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --border-subtle: #E5E7EB;
+}
+
+.light-mode body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.light-mode section {
+  background-color: var(--bg-primary) !important;
+}
+
+.light-mode .unified-card {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+  color: #111827 !important;
+}
+
+.light-mode .unified-input {
+  background-color: #F3F4F6 !important;
+  border-color: #E5E7EB !important;
+  color: #111827 !important;
+}
+
+.light-mode .section-divider {
+  border-top-color: #E5E7EB !important;
+}
+

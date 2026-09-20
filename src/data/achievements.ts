@@ -25,7 +25,7 @@ export const INNOVARA_ACHIEVEMENT: Achievement = {
     { label: "Team", value: "Trio Thunders" }
   ],
   tags: ["Startup Pitch", "Live MVP", "Supabase", "Gemini AI"],
-  link: "https://findback-ai.run.app"
+  link: "https://findback-331036023954.asia-southeast1.run.app/"
 };
 
 export const OTHER_ACHIEVEMENTS = [
@@ -45,7 +45,7 @@ export const OTHER_ACHIEVEMENTS = [
     badge: "PARTICIPATION",
     title: "Technical Symposium — COSCIAN '26",
     host: "Department of Computer Science",
-    description: "Active technical participant in competitive programming and web challenges.",
+    description: "Participated in the inter-collegiate technical symposium hosted by Hindustan College of Arts & Science, engaging in competitive programming and web development challenges.",
     date: "March 2026",
     link: "https://drive.google.com/drive/folders/1EKwMpLZpJOSn6jwKefL8wYzjpnHLanHg?usp=drive_link"
   },

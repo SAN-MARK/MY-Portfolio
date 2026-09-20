@@ -12,6 +12,7 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { TestimonialSection } from './components/TestimonialSection';
 import { YouTubeSection } from './components/YouTubeSection';
 import { LinkedInSection } from './components/LinkedInSection';
+import { InsightsSection } from './components/InsightsSection';
 import { ContactSection } from './components/ContactSection';
 import { FooterSection } from './components/FooterSection';
 import { HireMeModal } from './components/HireMeModal';
@@ -19,6 +20,7 @@ import { ProjectModal } from './components/ProjectModal';
 import { AiAssistantModal } from './components/AiAssistantModal';
 import { CustomCursor } from './components/CustomCursor';
 import { SEO } from './components/SEO';
+import { ScrollReveal } from './components/ScrollReveal';
 import { ProjectItem } from './types';
 import { soundEffects } from './utils/audio';
 
@@ -31,10 +33,11 @@ export default function App() {
   const [initialVictorMockupIdx, setInitialVictorMockupIdx] = useState(0);
   const [scanlinesEnabled, setScanlinesEnabled] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
 
   // Active section scroll observer
   useEffect(() => {
-    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'courses', 'github', 'achievements', 'experience', 'testimonial', 'youtube', 'linkedin', 'contact'];
+    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'courses', 'github', 'achievements', 'experience', 'testimonial', 'youtube', 'linkedin', 'insights', 'contact'];
     
     const handleScroll = () => {
       const scrollPos = window.scrollY + 200;
@@ -73,7 +76,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#0F1419] text-[#F5F3EE] relative selection:bg-[#C9A961] selection:text-[#0F1419] ${scanlinesEnabled ? 'scanlines-overlay' : ''}`}>
+    <div className={`min-h-screen bg-[#0F1419] text-[#F5F3EE] relative selection:bg-[#C9A961] selection:text-[#0F1419] ${scanlinesEnabled ? 'scanlines-overlay' : ''} ${isLightMode ? 'light-mode' : ''}`}>
       {/* Dynamic SEO & Open Graph Meta Tags */}
       <SEO />
 
@@ -89,6 +92,8 @@ export default function App() {
         onToggleScanlines={() => setScanlinesEnabled(!scanlinesEnabled)}
         soundEnabled={soundEnabled}
         onToggleSound={handleToggleSound}
+        isLightMode={isLightMode}
+        onToggleTheme={() => setIsLightMode(!isLightMode)}
       />
 
       {/* Main Sections Stack with .section-divider rhythms */}
@@ -103,7 +108,9 @@ export default function App() {
         />
 
         <div className="section-divider" />
-        <ByTheNumbersSection />
+        <ScrollReveal>
+          <ByTheNumbersSection />
+        </ScrollReveal>
 
         <div className="section-divider" />
         <SelectedWorkSection
@@ -115,36 +122,57 @@ export default function App() {
         />
 
         <div className="section-divider" />
-        <FeaturedProjectSection
-          onOpenPrototypeModal={handleOpenVictorPrototype}
-        />
+        <ScrollReveal>
+          <FeaturedProjectSection
+            onOpenPrototypeModal={handleOpenVictorPrototype}
+          />
+        </ScrollReveal>
 
         <div className="section-divider" />
-        <SkillsSection />
+        <ScrollReveal>
+          <SkillsSection />
+        </ScrollReveal>
 
         <div className="section-divider" />
-        <CoursesSection />
+        <ScrollReveal>
+          <CoursesSection />
+        </ScrollReveal>
 
         <div className="section-divider" />
-        <GitHubSection />
+        <ScrollReveal>
+          <GitHubSection />
+        </ScrollReveal>
 
         <div className="section-divider" />
-        <AchievementsSection />
+        <ScrollReveal>
+          <AchievementsSection />
+        </ScrollReveal>
 
         <div className="section-divider" />
-        <ExperienceSection />
+        <ScrollReveal>
+          <ExperienceSection />
+        </ScrollReveal>
 
         <div className="section-divider" />
         <TestimonialSection />
 
         <div className="section-divider" />
-        <YouTubeSection />
+        <ScrollReveal>
+          <YouTubeSection />
+        </ScrollReveal>
 
         <div className="section-divider" />
         <LinkedInSection />
 
         <div className="section-divider" />
-        <ContactSection />
+        <ScrollReveal>
+          <InsightsSection />
+        </ScrollReveal>
+
+        <div className="section-divider" />
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
       </main>
 
       {/* Footer */}

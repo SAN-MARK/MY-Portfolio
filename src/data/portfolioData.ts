@@ -4,13 +4,13 @@ export const PROFILE_DATA = {
   name: "Sanjeev M",
   role: "Full Stack Developer & UI/UX Designer",
   subtitle: "Portfolio 2026",
-  bio: "Building thoughtful digital products from first sketch to production. Specializing in high-performance web applications, UI/UX systems, and AI-powered workflows.",
+  bio: "Founder of FindBack. 2nd Place at INNOVARA'26 Startup Tech Pitch. Building thoughtful digital products from first sketch to production — combining rigorous engineering with refined interface design.",
   profileImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBcHea4EVeOy5Oi1PeoQ9zE9MubaqW755ib55W0LtHDvpPLCM30sabHjLATKo60OEllwzj0nT36frc_S8BubmsLjpXKSZ1EgKkbS7O93touy3doU7bIjGUg4YMjwgKfYDx_CtkTmkyBSTNfkh6UNenfzHYC0OjasdlWJmHapYi75GY0Qwcv0JxgWS5XOqWeV6p7OcTEp3bhR7qcBjQMhj_eNiWthw1-46ew4Edli81GzQFFzx4osBwGARzQRuzVAozvFvcjLkEyVYC",
   statsSummary: [
-    { label: "3 LIVE PRODUCTION APPS" },
-    { label: "25+ FIGMA SCREENS" },
-    { label: "17 COMPLETED COURSES" },
-    { label: "7 GITHUB REPOSITORIES" }
+    { label: "6+ LIVE PRODUCTION APPS" },
+    { label: "40+ FIGMA SCREENS" },
+    { label: "17+ TECHNICAL CERTIFICATIONS" },
+    { label: "9 GITHUB REPOSITORIES" }
   ],
   email: "iamheresanjeev@gmail.com",
   phone: "+91 8668045519",
@@ -26,7 +26,7 @@ export const STATS_DATA: StatItem[] = [
     id: "live_apps",
     title: "LIVE DEPLOYED APPS",
     icon: "rocket_launch",
-    value: "3",
+    value: "6+",
     subValue: "Production",
     subLabel: "web builds live",
     accentColor: "pink"
@@ -35,7 +35,7 @@ export const STATS_DATA: StatItem[] = [
     id: "certifications",
     title: "TECHNICAL CERTIFICATIONS",
     icon: "workspace_premium",
-    value: "3",
+    value: "17+",
     subValue: "Verified",
     subLabel: "Full Stack, GenAI, Python",
     accentColor: "cyan"
@@ -44,7 +44,7 @@ export const STATS_DATA: StatItem[] = [
     id: "github_repos",
     title: "GITHUB REPOSITORIES",
     icon: "code",
-    value: "7",
+    value: "9",
     subValue: "Public",
     subLabel: "repositories maintained",
     accentColor: "purple"
@@ -53,7 +53,7 @@ export const STATS_DATA: StatItem[] = [
     id: "figma_screens",
     title: "FIGMA PROTOTYPE SCREENS",
     icon: "dashboard",
-    value: "25+",
+    value: "40+",
     subValue: "Interactive",
     subLabel: "UI/UX component systems",
     accentColor: "green"
@@ -92,14 +92,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: "E-Commerce",
     badge: "✓ LIVE",
     badgeType: "live",
-    description: "Custom full-stack solo build featuring dynamic product routing, cart logic, and Dharakashan Cracker Store deployment.",
+    description: "Custom full-stack solo build featuring dynamic product routing, cart logic, and Dharakshan Cracker Store deployment.",
     tags: ["HTML", "CSS", "JS", "VERCEL"],
     actionText: "VISIT STORE ↗",
     actionType: "repo",
     accentColor: "cyan",
     linkUrl: "https://dharakashancrackerstore.vercel.app/",
     details: {
-      overview: "Dharakashan Cracker Store - A lightweight, hyper-fast e-commerce shopfront designed for instant product selection and zero-latency cart processing.",
+      overview: "Dharakshan Cracker Store - A lightweight, hyper-fast e-commerce shopfront designed for instant product selection and zero-latency cart processing.",
       keyFeatures: [
         "Dynamic filtering by product category, price, and seasonal offers",
         "Client-side persistent cart state with instant checkout preview",
@@ -117,22 +117,22 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: "Web Startup",
     badge: "✓ LIVE",
     badgeType: "live",
-    description: "Hyperlocal drop-off hubs + web application returning lost valuables to owners fast. Integrated with Google Auth, 3-table database, interactive maps, and auto-deploy.",
+    description: "Hyperlocal drop-off hubs + web application returning lost valuables to owners fast. Live at findback-ai.run.app. 2nd Place — INNOVARA'26 Startup Tech Pitch. Built in 4 days.",
     tags: ["REACT", "VERCEL", "MAPS", "DATABASE", "AI"],
     actionText: "VISIT FINDBACK ↗",
     actionType: "case_study",
     accentColor: "cyan",
     linkUrl: "https://findback-331036023954.asia-southeast1.run.app/",
     details: {
-      overview: "FindBack is a live web application connecting finders, neighborhood drop-off hubs, and item owners. Features Google Auth, 3 real database tables (Users, Found Items, Verification), and interactive satellite mapping centered in Chennai.",
+      overview: "FindBack is a live web application connecting finders, neighborhood drop-off hubs, and item owners. Winner of 2nd Place at INNOVARA'26 Startup Tech Pitch. Built in 4 days with Google Auth, 3 real database tables, and interactive satellite mapping.",
       keyFeatures: [
-        "Google Authentication & Role-Based Access Control (RBAC)",
-        "Real-time 3-Table Database Persistence (Users, Found Items, Verification)",
-        "Interactive Chennai operations map with Standard, Satellite & Terrain views",
-        "24-hr Return SLA, Instant Finder Rewards, and Fraud-Proof Verification"
+        "Live at findback-ai.run.app with 24-hr return SLA",
+        "2nd Place — INNOVARA'26 Startup Tech Pitch Award",
+        "Built in 4 days using Supabase, Gemini AI, and React",
+        "Interactive Chennai operations map with satellite view"
       ],
-      techStack: ["React", "TypeScript", "Tailwind CSS", "Vercel", "Google Auth", "Sheet.best / DB"],
-      impact: "Live production web application deployed at https://findback-331036023954.asia-southeast1.run.app/ with 24-hr SLA.",
+      techStack: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Google Auth", "Gemini AI"],
+      impact: "Live production web application deployed at findback-ai.run.app with 24-hr SLA.",
       linkUrl: "https://findback-331036023954.asia-southeast1.run.app/"
     }
   }
@@ -187,7 +187,7 @@ export const FEATURED_PROJECT = {
   figmaEmbedUrl: "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRs6ctoMQsLBJvjQPXk4Unp%3Fnode-id%3D0-1%26t%3DcPjENYqQ66Twwfnb-6",
   description: "Complete campus event & student internship management application designed in Figma with 25+ interactive prototype screens. Features VVI student login portal, roll-number verification, upcoming events directory, and instant pre-registration.",
   stats: [
-    { label: "SCREENS", value: "25+" },
+    { label: "SCREENS", value: "40+" },
     { label: "TOOL", value: "FIGMA" },
     { label: "STATUS", value: "PROTOTYPE READY" }
   ],
@@ -243,13 +243,45 @@ export const TECHNICAL_ECOSYSTEM = {
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
+    id: "shecan",
+    company: "She Can Foundation (via Internshala)",
+    role: "Frontend Development Intern",
+    period: "Jun 2026 – Aug 2026 (2 mos)",
+    type: "Internship, Remote",
+    statusText: "COMPLETED",
+    statusType: "completed",
+    icon: "code",
+    accentColor: "pink",
+    points: [
+      "Developed and optimized frontend interfaces for a social impact organization.",
+      "Collaborated remotely with the team to deliver web development tasks and responsive layouts."
+    ],
+    tags: ["Frontend Development", "Remote"]
+  },
+  {
+    id: "thiranex",
+    company: "Thiranex",
+    role: "UI/UX Designer Intern",
+    period: "Jun 2026 – Jul 2026 (1 mo)",
+    type: "Internship, Remote",
+    statusText: "COMPLETED",
+    statusType: "completed",
+    icon: "token",
+    accentColor: "cyan",
+    points: [
+      "Designed user interfaces and interactive prototypes using Figma for remote clients.",
+      "Implemented Google Material Design principles and created wireframes for user testing."
+    ],
+    tags: ["UI/UX", "Figma", "Remote"]
+  },
+  {
     id: "novitech",
     company: "NoviTech R&D Pvt Ltd",
     role: "Full Stack & UI/UX Intern",
-    period: "Jun 2026 – Present",
+    period: "June 2018 – September 2018",
     type: "Internship, Remote",
-    statusText: "IN PROGRESS",
-    statusType: "in_progress",
+    statusText: "COMPLETED",
+    statusType: "completed",
     icon: "terminal",
     accentColor: "cyan",
     points: [
@@ -257,7 +289,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       "Building functional prototypes for internal product validation using **React** and **Tailwind CSS**.",
       "Collaborating with senior engineers to implement responsive designs and optimize component performance."
     ],
-    tags: ["UX", "UI/UX"]
+    tags: ["UX", "UI/UX", "Full Stack"]
   },
   {
     id: "alfido",
@@ -333,4 +365,3 @@ export const SOCIAL_ICONS = {
   github: "https://lh3.googleusercontent.com/aida-public/AB6AXuAL6gAiOITlEQau6RMS1qeig9ttXp-Gnl3JWsWewB739y4rXnAc5bZcIXcZ3lFSPdvT-fi5cA61JALRnsQBuo2yVdBdqo_mAxIml7AvuC4LpCv7IZLCS8nbVpDczILIjJdi1MH2154KD3EW2WXu1ZoAYt2UjNlkA405nK5rCl0IvW5Q9JhKNmSVhK_CiIQ1fTFaW5qEdphamMDA_OMJTK9dCLLEU1mNroG4y6xt-gbNVj055i9WOkGWuaLiTEAT8-A6YMtengoDj-vj",
   figma: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrHYtkqAgqGfI3pgble07U8xl6wRPSf9RsrLpoJjMpO_x646WjeFWlmIsiThDmMNVRRyxI5L6XRKaolFjFF-1N0uHdgiEFMe69Y6q79vZDUMy5laIPQ3jatKaEdvXXpZul96WmO3n0eIEQtlplXsRddQdtMYuEYAOCDabF-5LxjxVrDi3yPS_pSAu1bXvtzYFNjfS5_wBlv4j46HGWvp2koYeBOKyiLxCcZPjRzupu0sG7mfXRl91wMyu-6eXxGC42BULUPOEyjtU0"
 };
-

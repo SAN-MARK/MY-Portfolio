@@ -10,12 +10,16 @@ interface NavbarProps {
   onToggleScanlines: () => void;
   soundEnabled: boolean;
   onToggleSound: () => void;
+  isLightMode: boolean;
+  onToggleTheme: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   activeSection,
   onOpenHireModal,
   onOpenAiModal,
+  isLightMode,
+  onToggleTheme,
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -115,6 +119,21 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Controls & CTA */}
         <div className="hidden md:flex items-center gap-3">
           
+          {/* Theme Toggle Button */}
+          <button
+            id="theme_toggle_btn"
+            onClick={() => {
+              soundEffects.playClick();
+              onToggleTheme();
+            }}
+            className="p-2 rounded border border-[#2A3038] hover:border-[#C9A961] text-[#B8B5AD] hover:text-[#C9A961] transition-colors cursor-pointer flex items-center justify-center"
+            title={isLightMode ? "Switch to Dark Mode" : "Switch to Light Mode"}
+          >
+            <span className="material-symbols-outlined text-base">
+              {isLightMode ? 'dark_mode' : 'light_mode'}
+            </span>
+          </button>
+
           {/* AI Twin Button */}
           <button
             id="nav_ai_twin_btn"
@@ -153,6 +172,19 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Hamburger Button */}
         <div className="flex xl:hidden items-center gap-2">
+          <button
+            id="mobile_theme_toggle_btn"
+            onClick={() => {
+              soundEffects.playClick();
+              onToggleTheme();
+            }}
+            className="p-2 text-[#F5F3EE] focus:outline-none cursor-pointer"
+            title="Toggle Theme"
+          >
+            <span className="material-symbols-outlined text-xl block">
+              {isLightMode ? 'dark_mode' : 'light_mode'}
+            </span>
+          </button>
           <button
             id="mobile_menu_toggle_btn"
             onClick={() => {
