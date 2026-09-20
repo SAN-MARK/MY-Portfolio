@@ -14,10 +14,6 @@ interface CourseItem {
 interface CourseCategory {
   id: string;
   name: string;
-  accent: string;
-  badgeBg: string;
-  badgeBorder: string;
-  badgeText: string;
   icon: string;
   courses: CourseItem[];
 }
@@ -31,10 +27,6 @@ export const CoursesSection: React.FC = () => {
     {
       id: "ai_automation",
       name: "AI & Automation",
-      accent: "#6366f1",
-      badgeBg: "bg-[#6366f1]/15",
-      badgeBorder: "border-[#050508]",
-      badgeText: "text-[#6366f1]",
       icon: "smart_toy",
       courses: [
         {
@@ -96,7 +88,7 @@ export const CoursesSection: React.FC = () => {
         {
           id: "c17",
           title: "Generative AI Professional Specialization",
-          issuer: "Tamil Nadu Skill Development (TN Skill) / Naan Mudhalvan",
+          issuer: "Tamil Nadu Skill Development / Naan Mudhalvan",
           date: "2026",
           badge: "STATE CERTIFIED",
           linkUrl: driveLink
@@ -106,16 +98,12 @@ export const CoursesSection: React.FC = () => {
     {
       id: "design",
       name: "Design & UX",
-      accent: "#6366f1",
-      badgeBg: "bg-[#6366f1]/15",
-      badgeBorder: "border-[#050508]",
-      badgeText: "text-[#6366f1]",
       icon: "palette",
       courses: [
         {
           id: "c8",
           title: "Intro to Graphic Design + Basics of UI/UX",
-          issuer: "Novitech R&D / Professional Cert",
+          issuer: "Novitech R&D",
           date: "2026",
           certCode: "CERT #9763980",
           linkUrl: driveLink
@@ -133,10 +121,6 @@ export const CoursesSection: React.FC = () => {
     {
       id: "data_business",
       name: "Data & Business",
-      accent: "#6366f1",
-      badgeBg: "bg-[#6366f1]/15",
-      badgeBorder: "border-[#050508]",
-      badgeText: "text-[#6366f1]",
       icon: "analytics",
       courses: [
         {
@@ -176,16 +160,12 @@ export const CoursesSection: React.FC = () => {
     {
       id: "security_cloud",
       name: "Security & Cloud",
-      accent: "#6366f1",
-      badgeBg: "bg-[#6366f1]/15",
-      badgeBorder: "border-[#050508]",
-      badgeText: "text-[#6366f1]",
       icon: "security",
       courses: [
         {
           id: "c14",
           title: "Introduction to Cyber Security",
-          issuer: "Open University (Accredited by IISP & NCSC)",
+          issuer: "Open University (IISP & NCSC)",
           date: "2026",
           badge: "92% SCORE",
           linkUrl: driveLink
@@ -213,50 +193,37 @@ export const CoursesSection: React.FC = () => {
   const totalCoursesCount = categories.reduce((acc, cat) => acc + cat.courses.length, 0);
 
   return (
-    <section id="courses" className="py-24 relative bg-[#07070a] overflow-hidden">
-      {/* Comic Panel Gutter */}
-      <div className="comic-gutter absolute top-0 left-0 right-0" />
-
-      {/* Comic Halftone Pattern & Ambient Lighting */}
-      <div className="absolute inset-0 bg-halftone opacity-10 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#e21d24] to-transparent" />
-      <div className="absolute top-1/3 -left-40 w-96 h-96 bg-[#e21d24]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-[#f59e0b]/10 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="courses" className="py-24 bg-[#0F1419] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#0e0e16] border-2 border-[#040406] text-xs font-mono text-[#fbbf24] font-bold shadow-[2px_2px_0px_#040406]">
-            <span className="w-2 h-2 rounded-full bg-[#e21d24] animate-pulse" />
-            <span>● TRAINING ARC DOSSIER</span>
-          </div>
-
-          <h2 className="text-4xl sm:text-6xl font-display font-black text-[#f3f4f6] tracking-wider uppercase">
-            TRAINING <span className="text-[#e21d24]">ARC</span>
+        <div className="mb-16">
+          <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#C9A961] font-semibold block mb-2">
+            Professional Credentials
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#F5F3EE] tracking-tight">
+            Certifications & <span className="italic font-normal text-[#C9A961]">Training</span>
           </h2>
-
-          <p className="text-sm sm:text-base font-sans text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
-            {totalCoursesCount} accredited certifications completed in 2026 across Generative AI, Full-Stack Architecture, UI/UX Design, and Cyber Systems — rigorous self-directed skill mastery alongside industry work.
+          <div className="w-12 h-0.5 bg-[#C9A961] mt-4" />
+          <p className="text-base font-sans text-[#B8B5AD] max-w-3xl mt-4 leading-relaxed">
+            {totalCoursesCount} accredited certifications completed in 2026 across Generative AI, Full-Stack Architecture, UI/UX Design, and Cyber Systems.
           </p>
-
-          <div className="w-24 h-1.5 bg-[#e21d24] mx-auto rounded-full mt-2 shadow-[0_0_8px_rgba(226,29,36,0.6)]" />
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-3 mb-12">
+        <div className="flex items-center flex-wrap gap-2 sm:gap-3 mb-12">
           <button
             onClick={() => {
               soundEffects.playBeep();
               setActiveCategory('ALL');
             }}
-            className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all border-2 border-[#040406] cursor-pointer ${
+            className={`px-4 py-2 rounded-[6px] text-xs font-sans font-semibold uppercase tracking-wider transition-all cursor-pointer ${
               activeCategory === 'ALL'
-                ? 'bg-[#e21d24] text-white shadow-[3px_3px_0px_#fbbf24]'
-                : 'bg-[#0e0e16] text-[#9ca3af] hover:text-[#00f0ff]'
+                ? 'bg-[#C9A961] text-[#0F1419]'
+                : 'bg-[#1A1F26] text-[#B8B5AD] border border-[#2A3038] hover:text-[#F5F3EE]'
             }`}
           >
-            ALL MODULES ({totalCoursesCount})
+            All Modules ({totalCoursesCount})
           </button>
 
           {categories.map((cat) => (
@@ -266,14 +233,13 @@ export const CoursesSection: React.FC = () => {
                 soundEffects.playBeep();
                 setActiveCategory(cat.id);
               }}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all border-2 border-[#040406] cursor-pointer flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-[6px] text-xs font-sans font-semibold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeCategory === cat.id
-                  ? 'bg-[#e21d24] text-white shadow-[3px_3px_0px_#fbbf24]'
-                  : 'bg-[#0e0e16] text-[#9ca3af] hover:text-[#00f0ff]'
+                  ? 'bg-[#C9A961] text-[#0F1419]'
+                  : 'bg-[#1A1F26] text-[#B8B5AD] border border-[#2A3038] hover:text-[#F5F3EE]'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-[#fbbf24]" />
-              <span>{cat.name.toUpperCase()} ({cat.courses.length})</span>
+              <span>{cat.name} ({cat.courses.length})</span>
             </button>
           ))}
         </div>
@@ -285,18 +251,18 @@ export const CoursesSection: React.FC = () => {
             .map((cat) => (
               <div key={cat.id} className="space-y-6">
                 
-                {/* Category Header Bar with Left Comic Accent */}
-                <div className="flex items-center justify-between pl-4 py-2.5 border-l-4 border-[#e21d24] rounded-r-xl bg-[#0e0e16] border-2 border-r-2 border-t-2 border-b-2 border-[#040406] shadow-[3px_3px_0px_#040406]">
+                {/* Category Header Bar */}
+                <div className="flex items-center justify-between pb-3 border-b border-[#C9A961]">
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl text-[#fbbf24]">
+                    <span className="material-symbols-outlined text-xl text-[#C9A961]">
                       {cat.icon}
                     </span>
-                    <h3 className="font-display font-bold text-2xl text-[#f3f4f6] tracking-wider uppercase">
+                    <h3 className="font-serif text-2xl font-bold text-[#F5F3EE]">
                       {cat.name}
                     </h3>
                   </div>
 
-                  <span className="font-mono text-xs text-[#9ca3af] font-bold pr-4">
+                  <span className="font-sans text-xs text-[#7A7A7A] uppercase tracking-wider">
                     {cat.courses.length} Certified {cat.courses.length === 1 ? 'Module' : 'Modules'}
                   </span>
                 </div>
@@ -310,18 +276,18 @@ export const CoursesSection: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => soundEffects.playClick()}
-                      className="bg-[#0e0e16] border-3 border-[#040406] shadow-[4px_4px_0px_#040406] hover:border-[#00f0ff] hover:shadow-[6px_6px_0px_#00f0ff] rounded-[14px] p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group cursor-pointer"
+                      className="unified-card flex flex-col justify-between group cursor-pointer"
                     >
                       <div className="space-y-4">
                         
                         {/* Top Badge & Code */}
                         <div className="flex items-center justify-between gap-2 flex-wrap">
-                          <span className="px-2.5 py-0.5 rounded-full border-2 border-[#040406] text-[10px] font-mono font-bold tracking-wider uppercase bg-[#f59e0b]/15 text-[#fbbf24]">
+                          <span className="px-2.5 py-0.5 rounded bg-[#252B33] border border-[#2A3038] text-[10px] font-sans font-semibold tracking-wider uppercase text-[#C9A961]">
                             {course.badge || 'VERIFIED'}
                           </span>
 
                           {course.certCode && (
-                            <span className="font-mono text-[10px] text-[#f3f4f6] bg-[#07070a] px-2 py-0.5 rounded border-2 border-[#040406] font-bold">
+                            <span className="font-sans text-[10px] text-[#B8B5AD] bg-[#252B33] px-2 py-0.5 rounded border border-[#2A3038]">
                               {course.certCode}
                             </span>
                           )}
@@ -329,26 +295,23 @@ export const CoursesSection: React.FC = () => {
 
                         {/* Title & Issuer */}
                         <div>
-                          <h4 className="font-headline font-bold text-base text-[#f3f4f6] group-hover:text-[#00f0ff] transition-colors leading-snug">
+                          <h4 className="font-serif font-bold text-lg text-[#F5F3EE] group-hover:text-[#C9A961] transition-colors leading-snug">
                             {course.title}
                           </h4>
-                          <p className="font-mono text-xs text-[#9ca3af] mt-1.5 flex items-center gap-1.5">
-                            <span className="material-symbols-outlined text-sm text-[#e21d24]">domain</span>
+                          <p className="font-sans text-xs text-[#7A7A7A] mt-2 flex items-center gap-1.5">
+                            <span className="material-symbols-outlined text-sm text-[#C9A961]">domain</span>
                             {course.issuer}
                           </p>
                         </div>
 
                       </div>
 
-                      {/* Bottom Footer: Date & Drive Link */}
-                      <div className="pt-4 mt-6 border-t-2 border-[#040406] flex items-center justify-between text-[11px] font-mono text-[#9ca3af]">
-                        <span className="flex items-center gap-1">
-                          <span className="material-symbols-outlined text-xs text-[#fbbf24]">calendar_today</span>
-                          Issued: {course.date}
-                        </span>
+                      {/* Bottom Footer: Date & Link */}
+                      <div className="pt-4 mt-6 border-t border-[#2A3038] flex items-center justify-between text-xs font-sans text-[#7A7A7A]">
+                        <span>Issued: {course.date}</span>
 
-                        <span className="text-[#00f0ff] group-hover:text-[#f3f4f6] flex items-center gap-1 font-bold transition-colors">
-                          <span>VERIFY</span>
+                        <span className="text-[#C9A961] group-hover:underline flex items-center gap-1 font-semibold">
+                          <span>View Credential</span>
                           <span className="material-symbols-outlined text-xs">open_in_new</span>
                         </span>
                       </div>
@@ -367,10 +330,10 @@ export const CoursesSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundEffects.playClick()}
-            className="btn-crimson inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xs font-headline font-bold tracking-widest uppercase transition-all shadow-[4px_4px_0px_#040406] hover:shadow-[6px_6px_0px_#fbbf24]"
+            className="btn-gold-primary"
           >
-            <span className="material-symbols-outlined text-base text-[#fbbf24]">verified</span>
-            <span>VIEW ALL 17 CERTIFICATE DOCUMENTS ON GOOGLE DRIVE ↗</span>
+            <span className="material-symbols-outlined text-base">verified</span>
+            <span>View All Certifications ↗</span>
           </a>
         </div>
 

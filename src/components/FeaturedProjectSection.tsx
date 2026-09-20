@@ -13,52 +13,42 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({
   const [activeScreenIndex, setActiveScreenIndex] = useState<number>(0);
 
   return (
-    <section id="featured" className="py-24 relative bg-[#07070a] overflow-hidden">
-      {/* Comic Panel Gutter */}
-      <div className="comic-gutter absolute top-0 left-0 right-0" />
-
-      {/* Halftone Dot Overlay */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-halftone-dots opacity-20 pointer-events-none" />
-
-      {/* Background Radial Lights */}
-      <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#e21d24]/12 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#f59e0b]/10 rounded-full blur-[140px] pointer-events-none" />
-
+    <section id="featured" className="py-24 relative bg-[#0F1419] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Details & Copy */}
-          <div className="lg:col-span-6 relative pl-6 border-l-4 border-[#e21d24] space-y-6">
+          <div className="lg:col-span-6 relative pl-6 border-l-2 border-[#C9A961] space-y-6">
             
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#fbbf24] tracking-widest uppercase font-bold bg-[#0f0f18] px-3 py-1 rounded border-2 border-[#040406] shadow-[2px_2px_0px_#040406]">
-              <span className="w-2 h-2 rounded-full bg-[#fbbf24] animate-pulse"></span>
-              <span>SIGNATURE MISSION // {FEATURED_PROJECT.badge}</span>
+            <div className="inline-flex items-center gap-2 font-sans text-xs text-[#C9A961] tracking-widest uppercase font-semibold bg-[#1A1F26] px-3 py-1 rounded border border-[#2A3038]">
+              <span className="w-2 h-2 rounded-full bg-[#C9A961]" />
+              <span>Featured Project</span>
             </div>
 
             {/* Title */}
             <div>
-              <h2 className="text-4xl sm:text-6xl font-display font-black text-[#f3f4f6] tracking-wider uppercase leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <h2 className="font-serif text-4xl sm:text-6xl font-bold text-[#F5F3EE] tracking-tight leading-tight">
                 {FEATURED_PROJECT.title}
               </h2>
-              <p className="text-lg sm:text-2xl font-headline font-bold text-[#fbbf24] mt-2">
+              <p className="font-sans font-semibold text-lg sm:text-xl text-[#C9A961] mt-2">
                 {FEATURED_PROJECT.subtitle}
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-[#9ca3af] font-sans text-base leading-relaxed">
+            <p className="text-[#B8B5AD] font-sans text-base leading-relaxed">
               {FEATURED_PROJECT.description}
             </p>
 
             {/* Key Stats Row */}
-            <div className="grid grid-cols-3 gap-4 py-4 border-y-2 border-[#040406]">
+            <div className="grid grid-cols-3 gap-4 py-4 border-y border-[#2A3038]">
               {FEATURED_PROJECT.stats.map((stat, idx) => (
                 <div key={idx} className="space-y-1">
-                  <span className="font-mono text-[10px] text-[#9ca3af] uppercase tracking-widest block font-bold">
+                  <span className="font-sans text-[11px] text-[#7A7A7A] uppercase tracking-widest block font-semibold">
                     {stat.label}
                   </span>
-                  <span className="font-display font-bold text-2xl text-[#fbbf24] block">
+                  <span className="font-serif font-bold text-2xl text-[#C9A961] block">
                     {stat.value}
                   </span>
                 </div>
@@ -67,7 +57,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({
 
             {/* Interactive Screen Selector Pills */}
             <div className="space-y-2">
-              <span className="font-mono text-[11px] text-[#9ca3af] uppercase tracking-wider block font-bold">
+              <span className="font-sans text-xs text-[#B8B5AD] uppercase tracking-wider block font-semibold">
                 Select Screen Preview:
               </span>
               <div className="flex flex-wrap gap-2">
@@ -78,10 +68,10 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({
                       soundEffects.playClick();
                       setActiveScreenIndex(idx);
                     }}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border-2 border-[#040406] cursor-pointer ${
+                    className={`px-3.5 py-2 rounded-[6px] text-xs font-sans font-semibold transition-all border cursor-pointer ${
                       activeScreenIndex === idx
-                        ? 'bg-[#e21d24] text-white shadow-[2px_2px_0px_#fbbf24]'
-                        : 'bg-[#0f0f18] text-[#9ca3af] hover:text-[#00f0ff]'
+                        ? 'bg-[#C9A961] text-[#0F1419] border-[#C9A961]'
+                        : 'bg-[#1A1F26] text-[#B8B5AD] border-[#2A3038] hover:text-[#F5F3EE]'
                     }`}
                   >
                     0{idx + 1}. {mockup.title.split(' ')[0]}
@@ -91,15 +81,15 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({
             </div>
 
             {/* CTA Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
               <a
                 href={FEATURED_PROJECT.figmaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => soundEffects.playClick()}
-                className="btn-crimson w-full sm:w-auto px-6 py-3.5 rounded-xl text-xs font-headline font-bold text-white tracking-wider uppercase flex items-center justify-center gap-2"
+                className="btn-gold-primary w-full sm:w-auto"
               >
-                <span>FIGMA BLUEPRINT ↗</span>
+                <span>Figma Blueprint</span>
                 <span className="material-symbols-outlined text-base">open_in_new</span>
               </a>
 
@@ -109,19 +99,18 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({
                   soundEffects.playClick();
                   onOpenPrototypeModal(activeScreenIndex);
                 }}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0f0f18] hover:bg-[#00f0ff] hover:text-[#040406] border-2 border-[#040406] text-xs font-headline font-bold text-[#f3f4f6] tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[3px_3px_0px_#040406]"
+                className="btn-gold-secondary w-full sm:w-auto"
               >
-                <span>INTERACTIVE VIEWER</span>
+                <span>Interactive Viewer</span>
                 <span className="material-symbols-outlined text-base">fullscreen</span>
               </button>
             </div>
 
           </div>
 
-          {/* Right Column: Authentic Phone Screen Component */}
+          {/* Right Column: Phone Screen Component */}
           <div className="lg:col-span-6 relative flex flex-col items-center justify-center">
             
-            {/* Phone Screen Display Container */}
             <div className="relative w-full max-w-sm mx-auto flex flex-col items-center">
               <VVIAppScreen
                 screenIndex={activeScreenIndex}
@@ -132,20 +121,20 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({
               />
 
               {/* Active Screen Info Badge */}
-              <div className="w-full max-w-[320px] bg-[#0f0f18] border-3 border-[#040406] shadow-[4px_4px_0px_#fbbf24] p-3.5 rounded-2xl text-left mt-3">
+              <div className="w-full max-w-[320px] bg-[#1A1F26] border border-[#2A3038] p-4 rounded-[8px] text-left mt-4 shadow-xl">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[11px] text-[#fbbf24] uppercase tracking-wider block font-bold">
+                  <span className="font-sans text-xs text-[#C9A961] uppercase tracking-wider block font-semibold">
                     0{activeScreenIndex + 1}. {FEATURED_PROJECT.mockups[activeScreenIndex].title}
                   </span>
                   <button
                     onClick={() => onOpenPrototypeModal(activeScreenIndex)}
-                    className="p-1 rounded-lg bg-[#07070a] border-2 border-[#040406] text-[#00f0ff] hover:bg-[#00f0ff] hover:text-[#040406] transition-colors cursor-pointer"
+                    className="p-1.5 rounded bg-[#252B33] border border-[#2A3038] text-[#C9A961] hover:bg-[#C9A961] hover:text-[#0F1419] transition-colors cursor-pointer"
                     title="Fullscreen Mode"
                   >
                     <span className="material-symbols-outlined text-sm block">zoom_in</span>
                   </button>
                 </div>
-                <p className="text-[11px] text-[#9ca3af] font-sans mt-1">
+                <p className="text-xs text-[#B8B5AD] font-sans mt-1.5">
                   {FEATURED_PROJECT.mockups[activeScreenIndex].description}
                 </p>
               </div>

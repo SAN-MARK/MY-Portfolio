@@ -9,6 +9,7 @@ import { CoursesSection } from './components/CoursesSection';
 import { GitHubSection } from './components/GitHubSection';
 import { AchievementsSection } from './components/AchievementsSection';
 import { ExperienceSection } from './components/ExperienceSection';
+import { TestimonialSection } from './components/TestimonialSection';
 import { YouTubeSection } from './components/YouTubeSection';
 import { LinkedInSection } from './components/LinkedInSection';
 import { ContactSection } from './components/ContactSection';
@@ -32,7 +33,7 @@ export default function App() {
 
   // Active section scroll observer
   useEffect(() => {
-    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'courses', 'github', 'achievements', 'experience', 'youtube', 'linkedin', 'contact'];
+    const sectionIds = ['hero', 'numbers', 'work', 'featured', 'skills', 'courses', 'github', 'achievements', 'experience', 'testimonial', 'youtube', 'linkedin', 'contact'];
     
     const handleScroll = () => {
       const scrollPos = window.scrollY + 200;
@@ -71,7 +72,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#0a0a0f] text-[#e5e5ea] relative selection:bg-[#6366f1] selection:text-white ${scanlinesEnabled ? 'scanlines-overlay' : ''}`}>
+    <div className={`min-h-screen bg-[#0F1419] text-[#F5F3EE] relative selection:bg-[#C9A961] selection:text-[#0F1419] ${scanlinesEnabled ? 'scanlines-overlay' : ''}`}>
       {/* Custom Cursor Follower */}
       <CustomCursor />
 
@@ -118,28 +119,29 @@ export default function App() {
         {/* 05. Skills & Expertise */}
         <SkillsSection />
 
-        {/* 08. Courses & Certifications */}
+        {/* 06. Courses & Certifications */}
         <CoursesSection />
 
-        {/* 06. GitHub Real-Time Metrics & Repos */}
+        {/* 07. GitHub Real-Time Metrics & Repos */}
         <GitHubSection />
 
-        {/* 07. Achievements & Campus Events */}
+        {/* 08. Achievements & Campus Events */}
         <AchievementsSection />
 
-        {/* 08. Experience */}
+        {/* 09. Experience */}
         <ExperienceSection />
 
-        {/* 09. YouTube Channel: Unknown BCA Guy */}
+        {/* 10. Mentor Testimonial */}
+        <TestimonialSection />
+
+        {/* 11. YouTube Channel: Unknown BCA Guy */}
         <YouTubeSection />
 
-        {/* 10. LinkedIn Social-Proof Strip */}
+        {/* 12. LinkedIn Social-Proof Strip */}
         <LinkedInSection />
 
-        {/* 11. Contact & Message Dispatch */}
-        <ContactSection
-          onOpenHireModal={() => setHireModalOpen(true)}
-        />
+        {/* 13. Contact & Message Dispatch */}
+        <ContactSection />
       </main>
 
       {/* Footer */}
@@ -173,7 +175,7 @@ export default function App() {
             soundEffects.playBeep();
             setAiModalOpen(true);
           }}
-          className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#12121a]/90 border border-[#6366f1] text-[#6366f1] shadow-[0_0_20px_rgba(99,102,241,0.3)] backdrop-blur-md hover:scale-105 transition-all text-xs font-mono group"
+          className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#1A1F26] border border-[#2A3038] text-[#C9A961] shadow-xl backdrop-blur-md hover:scale-105 transition-all text-xs font-sans group cursor-pointer"
         >
           <span className="material-symbols-outlined text-base animate-pulse">smart_toy</span>
           <span className="font-bold">Ask AI Twin</span>

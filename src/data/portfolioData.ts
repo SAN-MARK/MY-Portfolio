@@ -1,15 +1,16 @@
 import { ProjectItem, StatItem, SkillCategory, ExperienceItem } from '../types';
 
 export const PROFILE_DATA = {
-  name: "SANJEEV M",
-  role: "Full Stack Developer | UI/UX Designer",
-  subtitle: "Portfolio Hero 01",
-  bio: "Building full-stack web apps and interfaces — from Figma prototype to live deployed product in production.",
+  name: "Sanjeev M",
+  role: "Full Stack Developer & UI/UX Designer",
+  subtitle: "Portfolio 2026",
+  bio: "Building thoughtful digital products from first sketch to production. Specializing in high-performance web applications, UI/UX systems, and AI-powered workflows.",
   profileImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBcHea4EVeOy5Oi1PeoQ9zE9MubaqW755ib55W0LtHDvpPLCM30sabHjLATKo60OEllwzj0nT36frc_S8BubmsLjpXKSZ1EgKkbS7O93touy3doU7bIjGUg4YMjwgKfYDx_CtkTmkyBSTNfkh6UNenfzHYC0OjasdlWJmHapYi75GY0Qwcv0JxgWS5XOqWeV6p7OcTEp3bhR7qcBjQMhj_eNiWthw1-46ew4Edli81GzQFFzx4osBwGARzQRuzVAozvFvcjLkEyVYC",
   statsSummary: [
     { label: "3 LIVE PRODUCTION APPS" },
     { label: "25+ FIGMA SCREENS" },
-    { label: "3 TECH CERTIFICATIONS" }
+    { label: "17 COMPLETED COURSES" },
+    { label: "7 GITHUB REPOSITORIES" }
   ],
   email: "iamheresanjeev@gmail.com",
   phone: "+91 8668045519",
@@ -158,6 +159,23 @@ export const CREATIVE_MEDIA_WORK = {
     techStack: ["Adobe Premiere Pro", "CapCut Pro", "After Effects", "Motion Graphics"],
     impact: "Generated over 250,000 cumulative organic impressions across social channels."
   }
+};
+
+export const FEATURED_ACHIEVEMENT = {
+  id: "innovara-2026-2nd-place",
+  title: "INNOVARA'26 — 2nd Place",
+  subtitle: "Startup Tech Pitch | Prince Shri Balaji Arts and Science College",
+  description: "Won 2nd Place at the inter-collegiate Startup Tech Pitch. Competed against 3rd-year teams from multiple colleges with FindBack — a live full-stack lost & found network built in 4 days using Supabase, Gemini AI, and Next.js. Team: Trio Thunders (Sanjeev M, Babu K, Sheik Fareed Fahim).",
+  date: "September 19, 2026",
+  badge: "NEW ACHIEVEMENT",
+  icon: "🏆",
+  stats: [
+    { label: "Position", value: "2nd Place" },
+    { label: "Category", value: "Startup Tech Pitch" },
+    { label: "Team", value: "Trio Thunders" }
+  ],
+  tags: ["Startup Pitch", "Live MVP", "Supabase", "Gemini AI"],
+  link: "https://findback-ai.run.app"
 };
 
 export const FEATURED_PROJECT = {

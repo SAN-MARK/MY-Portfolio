@@ -44,8 +44,8 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fadeIn">
-      <div className="bg-[#0e0e16] max-w-xl w-full p-6 sm:p-8 rounded-2xl border-4 border-[#040406] relative shadow-[8px_8px_0px_#fbbf24] space-y-6 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+      <div className="bg-[#1A1F26] max-w-xl w-full p-6 sm:p-8 rounded-[16px] border border-[#2A3038] relative shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
         
         {/* Close Button */}
         <button
@@ -53,44 +53,43 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             soundEffects.playClick();
             onClose();
           }}
-          className="absolute top-4 right-4 p-2 rounded-xl bg-[#07070a] border-2 border-[#040406] text-[#9ca3af] hover:text-[#00f0ff] cursor-pointer"
+          className="absolute top-4 right-4 p-2 rounded-[8px] bg-[#252B33] border border-[#2A3038] text-[#B8B5AD] hover:text-[#F5F3EE] cursor-pointer transition-colors"
         >
           <span className="material-symbols-outlined text-lg">close</span>
         </button>
 
         {/* Modal Header */}
-        <div className="space-y-1">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#fbbf24] font-bold uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-[#e21d24] animate-ping"></span>
-            <span>TACTICAL ALLIANCE & MISSION DISPATCH</span>
-          </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#f3f4f6] uppercase">
-            DISPATCH <span className="text-[#e21d24]">MISSION BRIEF</span>
+        <div className="space-y-2">
+          <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#C9A961] font-semibold block">
+            Initiate Collaboration
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F3EE]">
+            Start a <span className="italic font-normal text-[#C9A961]">Project</span>
           </h2>
-          <p className="text-xs font-sans text-[#9ca3af]">
-            Submit your objectives, timeline, and tactical parameters to initialize collaboration with Sanjeev M.
+          <p className="text-xs font-sans text-[#B8B5AD]">
+            Submit your objectives, timeline, and project parameters to begin a collaboration with Sanjeev M.
           </p>
         </div>
 
         {submitted ? (
-          <div className="p-6 rounded-2xl bg-[#07070a] border-2 border-[#040406] text-center space-y-4 shadow-[4px_4px_0px_#fbbf24]">
-            <span className="material-symbols-outlined text-5xl text-[#fbbf24]">check_circle</span>
-            <h3 className="font-display font-bold text-2xl text-[#f3f4f6]">MISSION BRIEF TRANSMITTED!</h3>
-            <p className="text-xs text-[#9ca3af] font-sans leading-relaxed">
-              Acknowledged, {formData.name}! Sanjeev has received your tactical brief for <strong>{formData.projectType}</strong>. Priority communications will be dispatched to <strong>{formData.email}</strong> within 24 hours.
+          <div className="p-6 rounded-[12px] bg-[#252B33] border border-[#2A3038] text-center space-y-4">
+            <span className="material-symbols-outlined text-4xl text-[#C9A961]">check_circle</span>
+            <h3 className="font-serif font-bold text-2xl text-[#F5F3EE]">Message Transmitted</h3>
+            <p className="text-xs text-[#B8B5AD] font-sans leading-relaxed">
+              Thank you, {formData.name}! Sanjeev has received your project proposal for <strong>{formData.projectType}</strong>. Priority communications will be dispatched to <strong>{formData.email}</strong> within 24 hours.
             </p>
             <button
               onClick={onClose}
-              className="btn-crimson px-6 py-2.5 rounded-xl text-xs font-headline font-bold text-white uppercase tracking-wider shadow-[3px_3px_0px_#040406]"
+              className="btn-gold-primary"
             >
-              RETURN TO COMMAND CENTER
+              Return to Portfolio
             </button>
           </div>
         ) : (
           <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] font-mono text-[#9ca3af] font-bold uppercase mb-1">
+                <label className="block text-xs font-sans text-[#B8B5AD] font-semibold uppercase mb-1">
                   Your Full Name
                 </label>
                 <input
@@ -99,12 +98,12 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g., Alex Vance"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#07070a] border-2 border-[#040406] text-xs text-[#f3f4f6] placeholder-[#6b7280] focus:outline-none focus:border-[#00f0ff] font-mono"
+                  className="unified-input w-full"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono text-[#9ca3af] font-bold uppercase mb-1">
+                <label className="block text-xs font-sans text-[#B8B5AD] font-semibold uppercase mb-1">
                   Email Address
                 </label>
                 <input
@@ -113,20 +112,20 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="alex@company.com"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#07070a] border-2 border-[#040406] text-xs text-[#f3f4f6] placeholder-[#6b7280] focus:outline-none focus:border-[#00f0ff] font-mono"
+                  className="unified-input w-full"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] font-mono text-[#9ca3af] font-bold uppercase mb-1">
-                  Mission Archetype
+                <label className="block text-xs font-sans text-[#B8B5AD] font-semibold uppercase mb-1">
+                  Project Type
                 </label>
                 <select
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#07070a] border-2 border-[#040406] text-xs text-[#f3f4f6] focus:outline-none focus:border-[#00f0ff] font-mono"
+                  className="unified-input w-full"
                 >
                   <option value="Full Stack Web App">Full Stack Web App</option>
                   <option value="UI/UX & Figma Prototype">UI/UX & Figma Prototype</option>
@@ -137,13 +136,13 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono text-[#9ca3af] font-bold uppercase mb-1">
+                <label className="block text-xs font-sans text-[#B8B5AD] font-semibold uppercase mb-1">
                   Estimated Budget
                 </label>
                 <select
                   value={formData.budget}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#07070a] border-2 border-[#040406] text-xs text-[#f3f4f6] focus:outline-none focus:border-[#00f0ff] font-mono"
+                  className="unified-input w-full"
                 >
                   <option value="₹2,500 – ₹5,000">₹2,500 – ₹5,000</option>
                   <option value="₹5,000 – ₹10,000">₹5,000 – ₹10,000</option>
@@ -156,8 +155,8 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             </div>
 
             <div>
-              <label className="block text-[11px] font-mono text-[#9ca3af] font-bold uppercase mb-1">
-                Mission Scope & Objectives
+              <label className="block text-xs font-sans text-[#B8B5AD] font-semibold uppercase mb-1">
+                Project Scope & Objectives
               </label>
               <textarea
                 rows={3}
@@ -165,7 +164,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                 placeholder="Describe key features, target deadline, or reference links..."
-                className="w-full px-4 py-2.5 rounded-xl bg-[#07070a] border-2 border-[#040406] text-xs text-[#f3f4f6] placeholder-[#6b7280] focus:outline-none focus:border-[#00f0ff] resize-none font-sans"
+                className="unified-input w-full resize-none"
               />
             </div>
 
@@ -173,18 +172,18 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
               <button
                 type="button"
                 onClick={handleWhatsAppSubmit}
-                className="w-full sm:w-1/2 btn-crimson py-3.5 rounded-xl text-xs font-headline font-bold text-white tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_#040406]"
+                className="btn-gold-primary w-full sm:w-1/2 flex items-center justify-center gap-2"
               >
-                <span>VIA SECURE WHATSAPP</span>
+                <span>Via WhatsApp</span>
                 <span className="material-symbols-outlined text-sm">chat</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleEmailSubmit}
-                className="w-full sm:w-1/2 py-3.5 rounded-xl bg-[#07070a] border-2 border-[#040406] hover:border-[#00f0ff] text-[#f3f4f6] text-xs font-headline font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer transition-all shadow-[3px_3px_0px_#040406]"
+                className="btn-gold-secondary w-full sm:w-1/2 flex items-center justify-center gap-2"
               >
-                <span>VIA ENCRYPTED EMAIL</span>
+                <span>Via Email</span>
                 <span className="material-symbols-outlined text-sm">mail</span>
               </button>
             </div>
